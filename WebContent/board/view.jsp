@@ -61,6 +61,10 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));
 			<th>조회수</th>
 			<td>${board.hit }</td>
 		</tr>
+		<tr>
+			<th>파일이름</th>
+			<td>${board.fileName }</td>
+		</tr>
 	</table>
 	<br>
 

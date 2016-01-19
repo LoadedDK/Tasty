@@ -65,7 +65,7 @@ public abstract class BoardDao {
 			//드라이버연결
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			//sql문장
-			String sql = " update board set title = ?, content = ?, writer = ? fileName = ? where no = ? ";
+			String sql = " update board set title = ?, content = ?, writer = ?, fileName = ? where no = ? ";
 			//상태 실행 및 데이터 입력
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getTitle());
