@@ -2,11 +2,11 @@ package com.tasty.qna.service;
 
 import java.util.List;
 
+import com.tasty.controller.ServiceInterface;
 import com.tasty.qna.dao.QnaDao;
 import com.tasty.qna.model.Qna;
 import com.tasty.qna.model.QnaModel;
 import com.tasty.qna.model.JspData;
-import com.webjjang.controller.ServiceInterface;
 
 public class QnaListService implements ServiceInterface {
 

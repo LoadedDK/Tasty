@@ -1,5 +1,5 @@
 <%@page import="com.tasty.qna.service.QnaUpdateViewService"%>
-<%@page import="com.webjjang.controller.ServiceInterface"%>
+<%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
