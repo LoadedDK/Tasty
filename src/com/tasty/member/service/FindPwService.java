@@ -2,17 +2,16 @@ package com.tasty.member.service;
 
 import com.tasty.controller.ServiceInterface;
 import com.tasty.member.dao.MemberDao;
-import com.tasty.member.model.Member;
 
-public class MemberUpdateService implements ServiceInterface {
+public class FindPwService implements ServiceInterface{
 	@Override
 	public Object service(Object obj) {
-		Member member = (Member) obj;
+		String id = (String) obj;
 		
 		MemberDao dao = new MemberDao();
-		
-		dao.update(member);
-		
-		return null;
+
+		String pw = dao.findId(id);
+
+		return pw;
 	}
 }
