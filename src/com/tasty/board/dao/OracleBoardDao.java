@@ -77,7 +77,9 @@ public class OracleBoardDao extends BoardDao {//공통적으로 사용되는 것
 			//드라이버연결
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			//sql문장
-			String sql = "insert into board( " + " no,title,content,writer) " + " values(board_seq.nextval,"
+			String sql = "insert into board " + 
+						 "( no,title,content,writer) " + 
+						 " values (board_seq.nextval,"
 					+ " ?,?,?)";
 			//상태 실행 및 데이터 입력
 			pstmt = conn.prepareStatement(sql);

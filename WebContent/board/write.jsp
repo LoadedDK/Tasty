@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<h2>회원 게시판 글쓰기</h2>
+<h2>자유 게시판 글쓰기</h2>
 <form action="writeProcess.jsp" method="post">
 	제목:<input name="title" /><br/>
 	내용:<textarea rows="5" cols="40" name="content"> </textarea><br/>
