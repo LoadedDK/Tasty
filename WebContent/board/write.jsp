@@ -12,10 +12,11 @@
 </head>
 <body>
 <h2>자유 게시판 글쓰기</h2>
-<form action="writeProcess.jsp" method="post">
+<form action="writeProcess.jsp" method="post" enctype="multipart/form-data">
 	제목:<input name="title" /><br/>
 	내용:<textarea rows="5" cols="40" name="content"> </textarea><br/>
 	글쓴이:<input name="writer" /><br/>
+	첨부파일 <input type="file" name="fileName"><br/>
 	<button>작성</button>
 </form>
 </body>

@@ -25,7 +25,7 @@ public abstract class BoardDao {
 			//드라이버연결
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			//sql문장
-			String sql = "select no,title,content,writer,to_char(wdate,'yyyy-mm-dd') as wdate,hit from board "
+			String sql = "select no,title,content,writer,to_char(wdate,'yyyy-mm-dd') as wdate,hit,fileName from board "
 					+ " where no = ?";
 			//상태실행
 			pstmt = conn.prepareStatement(sql);
@@ -39,6 +39,7 @@ public abstract class BoardDao {
 				board.setContent(rs.getString("content"));
 				board.setWriter(rs.getString("writer"));
 				board.setWdate(rs.getString("wdate"));
+				board.setFileName(rs.getString("fileName"));
 				board.setHit(rs.getInt("hit"));
 			}
 			return board;
@@ -64,13 +65,14 @@ public abstract class BoardDao {
 			//드라이버연결
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			//sql문장
-			String sql = " update board set title = ?, content = ?, writer = ? where no = ? ";
+			String sql = " update board set title = ?, content = ?, writer = ? fileName = ? where no = ? ";
 			//상태 실행 및 데이터 입력
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getTitle());
 			pstmt.setString(2, board.getContent());
 			pstmt.setString(3, board.getWriter());
-			pstmt.setInt(4, board.getNo());
+			pstmt.setString(4, board.getFileName());
+			pstmt.setInt(5, board.getNo());
 			//실행
 			pstmt.executeUpdate();
 			//표시

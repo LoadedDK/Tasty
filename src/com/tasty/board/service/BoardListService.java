@@ -17,7 +17,7 @@ public class BoardListService implements ServiceInterface {
 		List<Board> list = null;
 		// page처리를 위한 변수 선언
 		// page : 현재 page = 보여줄 페이지 ( 기본  =  1 )
-		int page = (Integer)obj; 
+		int page = (Integer)obj;
 		int totalPage = 0; // 전체 페이지 =  (전체글수-1) / 페이지당 글 수 + 1
 		int totalRow = 0; // 전체 글수 = DB에서 가져온다. Dao의 메소드 호출
 		int rowsPerPage = 3; // 한페이지에 보여 줄 글의 갯수 = 정해준다.
@@ -37,7 +37,7 @@ public class BoardListService implements ServiceInterface {
 		BoardDao dao = new OracleBoardDao();
 		// 전체 줄 수를 구해오는 메소드 호출
 		totalRow = dao.totalRow();
-		System.out.println("BoardListService.service().totalRow:" + totalRow);
+		//System.out.println("BoardListService.service().totalRow:" + totalRow);
 		// 전체 페이지 = ( 전체 줄수 -1 ) / 한페이지당 줄의 수 +1
 		totalPage = (totalRow-1)/rowsPerPage + 1;
 		// 현재 페이지의 첫번째 줄번호 = (현재페이지 - 1)* 한페이지당 글의 수 +1

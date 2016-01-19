@@ -43,15 +43,16 @@ table{  border-style: solid;
 	<h2>회원 게시판 리스트</h2>
 	<table>
 	<tr>
-	<th> 글번호</th><th> 제목</th> <th> 작성자 </th><th> 작성일 </th><th> 조회수 </th>
+	<th> 글번호</th><th> 제목</th> <th> 작성자 </th><th> 작성일 </th><th> 조회수 </th><th> 파일이름 </th>
 	</tr>
 	<c:forEach var="board" items="${list }">
 	<tr>
     <th>	${board.getNo() }
 	<th><a href="view.jsp?no=${board.no}">${board.title } </a>
-	</th><th> ${board.writer } 
+	</th><th> ${board.writer }
 	</th><th> ${board.wdate } 
-	</th><th> ${board.hit } </th>
+	</th><th> ${board.hit } 
+	</th><th> ${board.fileName }</th>
 		<%-- 	<%	}  //  end of for%> --%>
 	</tr>
 	</c:forEach> 

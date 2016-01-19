@@ -27,9 +27,9 @@ public class OracleBoardDao extends BoardDao {//공통적으로 사용되는 것
 			// 3. sql문장 작성
 			// 정렬하는 데이터 가져오기
 			String sql = " select no,title,writer,"
-					+ " to_char(wdate, 'yyyy-mm-dd')wdate,hit from board order by no desc";
+					+ " to_char(wdate, 'yyyy-mm-dd')wdate,hit, fileName from board order by no desc";
 			// rownum 붙이기.
-			sql = " select rownum rnum , no,title,writer, wdate, " + " hit from (  " + sql + " )";
+			sql = " select rownum rnum , no,title,writer, wdate, " + " hit,fileName from (  " + sql + " )";
 			// 시작글과 끝글 번호 사이에 데이터 가져오기(where)
 			sql = "select * from ( " + sql + " ) " + " where rnum between ? and ? ";
 			// 4. 실행할 수 있는상태 - 데이터 셋팅( ? 가 있어야 데이터 세팅이 가능하다.)
@@ -49,7 +49,7 @@ public class OracleBoardDao extends BoardDao {//공통적으로 사용되는 것
 			while (rs.next()) {
 				// next()해서 데이터를 찾는다. 있으면 true 없으면 false
 				list.add(new Board(rs.getInt("no"), rs.getString("title"), rs.getString("writer"),
-						rs.getString("wdate"), rs.getInt("hit")));
+						rs.getString("wdate"), rs.getInt("hit"), rs.getString("fileName")));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -78,14 +78,15 @@ public class OracleBoardDao extends BoardDao {//공통적으로 사용되는 것
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			//sql문장
 			String sql = "insert into board " + 
-						 "( no,title,content,writer) " + 
+						 "( no,title,content,writer,fileName) " + 
 						 " values (board_seq.nextval,"
-					+ " ?,?,?)";
+					+ " ?,?,?,?)";
 			//상태 실행 및 데이터 입력
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getTitle());
 			pstmt.setString(2, board.getContent());
 			pstmt.setString(3, board.getWriter());
+			pstmt.setString(4, board.getFileName());
 			//실행
 			pstmt.executeUpdate();
 			//표시
