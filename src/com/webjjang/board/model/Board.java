@@ -1,4 +1,4 @@
-package com.tasty.board.model;
+package com.webjjang.board.model;
 
 public class Board {
 	private int no;
