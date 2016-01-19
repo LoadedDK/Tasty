@@ -25,10 +25,6 @@ public class MemberListService implements ServiceInterface {
 		
 		MemberDao dao = new MemberDao(); // 회원정보를 불러오면서 출력
 		
-		ArrayList<Member> list = dao.list(startRow, endRow);
-		
-		JspData jspData = new JspData(totalPage, startPage, endPage, page, pagesPerGroup);
-		
 		totalRow = dao.totalRow();
 		totalPage = (totalRow-1) / rowsPerPage + 1;
 		startRow = (page-1) * rowsPerPage + 1;
@@ -37,6 +33,10 @@ public class MemberListService implements ServiceInterface {
 		endPage = startPage + pagesPerGroup - 1;
 		if(endPage > totalPage)
 			endPage = totalPage;
+		
+		ArrayList<Member> list = dao.list(startRow, endRow);
+		
+		JspData jspData = new JspData(totalPage, startPage, endPage, page, pagesPerGroup);
 		
 		MemberModel model = new MemberModel();
 		model.setList(list);

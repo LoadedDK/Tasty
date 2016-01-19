@@ -352,12 +352,12 @@ public class MemberDao {
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			stmt = conn.createStatement();
 			
-			String sql = "select count(no) from board";
+			String sql = "select count(id) from member";
 			
 			rs = stmt.executeQuery(sql);
 			
 			if(rs.next())
-				return rs.getInt("count(no)");
+				return rs.getInt("count(id)");
 		}
 		catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
@@ -386,9 +386,10 @@ public class MemberDao {
 			// DB 접속
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			// 리스트 sql문 작석
-			String sql = "select no, title, writer, to_char(wdate, 'yyyy-mm-dd') wdate, hit from board order by no desc";
-			sql = "select rownum as rnum, no, title, writer, wdate, hit from (" + sql + ")";
+			String sql = "select id, pw, name, to_char(birth, 'yyyy-mm-dd') birth, tel, email, grade from member where not grade=9";
+			sql = "select rownum as rnum, id, pw, name, birth, tel, email, grade from (" + sql + ")";
 			sql = "select * from (" + sql + ") where rnum between ? and ?";
+			
 			// 상태 - 데이터세팅
 			pstmt = conn.prepareStatement(sql);
 
