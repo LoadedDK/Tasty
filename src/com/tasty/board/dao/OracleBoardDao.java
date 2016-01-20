@@ -26,10 +26,10 @@ public class OracleBoardDao extends BoardDao {//공통적으로 사용되는 것
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			// 3. sql문장 작성
 			// 정렬하는 데이터 가져오기
-			String sql = " select no,title,writer,"
+			String sql = " select no,title,content,writer,"
 					+ " to_char(wdate, 'yyyy-mm-dd')wdate,hit, fileName from board order by no desc";
 			// rownum 붙이기.
-			sql = " select rownum rnum , no,title,writer, wdate, " + " hit,fileName from (  " + sql + " )";
+			sql = " select rownum rnum , no,title,content,writer, wdate, " + " hit,fileName from (  " + sql + " )";
 			// 시작글과 끝글 번호 사이에 데이터 가져오기(where)
 			sql = "select * from ( " + sql + " ) " + " where rnum between ? and ? ";
 			// 4. 실행할 수 있는상태 - 데이터 셋팅( ? 가 있어야 데이터 세팅이 가능하다.)
@@ -48,8 +48,8 @@ public class OracleBoardDao extends BoardDao {//공통적으로 사용되는 것
 			// rs는 데이터 마지막 그 위에 있다. 즉, rs는 아무런 데이터도 가지고 있지 않은 상태이다.
 			while (rs.next()) {
 				// next()해서 데이터를 찾는다. 있으면 true 없으면 false
-				list.add(new Board(rs.getInt("no"), rs.getString("title"), rs.getString("writer"),
-						rs.getString("wdate"), rs.getInt("hit"), rs.getString("fileName")));
+				list.add(new Board(rs.getInt("no"), rs.getString("title"), rs.getString("content"),
+						rs.getString("writer"), rs.getString("wdate"), rs.getInt("hit"), rs.getString("fileName")));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
