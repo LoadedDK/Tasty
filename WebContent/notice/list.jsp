@@ -1,32 +1,30 @@
+<%@page import="com.tasty.notice.model.Pp"%>
 <%@page import="com.tasty.notice.model.NoticeModel"%>
 <%@page import="com.tasty.notice.service.NoticeListService"%>
 <%@page import="com.tasty.controller.ServiceInterface"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!--  자바프로그램 적용 -->
 <%
-
-String pri = request.getParameter("pri");
-if(pri == null)  pri= "cur";
-ServiceInterface service = new NoticeListService();
-	request.setAttribute("list", service.service(pri));
-
-
-// //	NoticeListService 객체를 생성 후 호출
-// 	String pri = request.getParameter("pri");
-// 	if(pri == null)  pri= "cur";
-// 	ServiceInterface service = new NoticeListService();
-// 	request.setAttribute("list", service.service(pri));
-// 	int cpage = 1;
-// 	String pageStr = request.getParameter("page");
-// 	if(pageStr!=null)
-// 		cpage = Integer.parseInt(pageStr);
-// 	NoticeModel model = (NoticeModel)service.service(cpage);
-//  	// jstl과 EL 객체에서 사용하기 위해 request에 list를 담는다.
-// 	request.setAttribute("list", model.getList());
-// 	// page에 표시하거나 처리를 위한 데이터(JspData)도 request에 담는다.
-// 	request.setAttribute("jspData", model.getJspData());
+	int cpage=1;
+    String pageStr=request.getParameter("page");
+    if(pageStr!=null)
+    	cpage=Integer.parseInt(pageStr);
+	
+	// 공지 시점 지정하는 변수 period로 전달 받기
+	String period = request.getParameter("period");
+	if(period==null) period="cur"; //기본적으로 현재 공지를 보여주도록 설정.
+	
+	Pp pp= new Pp();
+	pp.setPeriod(period);
+	pp.setCpage(cpage);
+	
+	// NoticeListService 객체 생성 후 호출
+	ServiceInterface service = new NoticeListService();
+	NoticeModel model = (NoticeModel) service.service(pp);
+	request.setAttribute("list", model.getList());
+	request.setAttribute("jspData", model.getJspData());
+	request.setAttribute("period", period);
 %>
 <!DOCTYPE html>
 <html>
@@ -77,21 +75,21 @@ th {
 		</div>
 		<div id="pageMove">
 			<!-- 	페이지 처리 = 반복문 처리-->
-			[<a href="list.jsp?page=1">처음</a>] [<a
-				href="list.jsp?page=${jspData.startPage >1?jspData.startPage-jspData.pagesPerGroup:1 }">&lt;&lt;</a>]
-			[<a href="list.jsp?page=${jspData.page >1?jspData.page-1:1 }">&lt;</a>]
+			[<a href="list.jsp?period=${period }&page=1">처음</a>] [<a
+				href="list.jsp?period=${period }&page=${jspData.startPage >1?jspData.startPage-jspData.pagesPerGroup:1 }">&lt;&lt;</a>]
+			[<a href="list.jsp?period=${period }&page=${jspData.page >1?jspData.page-1:1 }">&lt;</a>]
 
 			<c:forEach var="i" begin="${jspData.startPage }"
 				end="${jspData.endPage }">
 				<!-- 블랭크가 들어가면 String이기때문에 오류가 발생한다.  -->
-			[<a href="list.jsp?page=${i }">${i }</a>]
+			[<a href="list.jsp?period=${period }&page=${i }">${i }</a>]
 			</c:forEach>
 
 			[<a
-				href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.page + 1 : jspData.totalPage }">&gt;</a>]
+				href="list.jsp?period=${period }&page=${jspData.totalPage > jspData.endPage ? jspData.page + 1 : jspData.totalPage }">&gt;</a>]
 			[<a
-				href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage + 1 : jspData.totalPage }">&gt;&gt;</a>]
-			[<a href="list.jsp?page=${jspData.totalPage }">끝</a>]
+				href="list.jsp?period=${period }&page=${jspData.totalPage > jspData.endPage ? jspData.endPage + 1 : jspData.totalPage }">&gt;&gt;</a>]
+			[<a href="list.jsp?period=${period }&page=${jspData.totalPage }">끝</a>]
 		</div>
 		<br> <br>
 		<div id="list_btn">

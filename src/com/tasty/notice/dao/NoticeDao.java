@@ -19,7 +19,7 @@ public class NoticeDao {
 	List<Notice> list = null;
 	Notice notice = null;
 
-	public List<Notice> list(String str) {
+	public List<Notice> list(String str, int startRow, int endRow) {
 		// TODO Auto-generated method stub
 		// 필요한 객체 선언 - try 밖에 선언 - close()
 		// 글리스트 - 열결, 상태, 결과 객체가 필요
@@ -50,9 +50,18 @@ public class NoticeDao {
 				break;
 			}
 			sql += " order by no desc ";
+			
+			// 3-2) rownum 붙이기
+			sql = "select rownum rnum, no, title, wdate, startDate, endDate, fileName  "
+					+ " from (" + sql + ")";
+			// 3-3) 시작 글과 끝글의 번호 사이에 데이터 가져오기 (where 사용)
+			sql = "select no, title, wdate, startDate, endDate, fileName from (" + sql + ") "
+					+ "where rnum between ? and ?";
 
 			// 4. 실행할 수 있는상태 - 데이터 셋팅( ? 가 있어야 데이터 세팅이 가능하다.)
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
 
 			// 5. 실행
 			// select - executeQuery() : 질의한다.
@@ -66,12 +75,14 @@ public class NoticeDao {
 			while (rs.next()) {
 				// next()해서 데이터를 찾는다. 있으면 true 없으면 false
 				list.add(new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("wdate"),
-						rs.getString("startDate"), rs.getString("endDate"),rs.getString("fileName")));
+						rs.getString("startDate"), rs.getString("endDate"), rs.getString("fileName")));
 			}
-		} catch (Exception e) {
+			return list;
+		}
+		catch (Exception e) {
 			e.printStackTrace();
-			// TODO: handle exception
-		} finally {
+		}
+		finally {
 			try {
 				// 7. 닫기
 				if (rs != null)
@@ -81,11 +92,10 @@ public class NoticeDao {
 				if (con != null)
 					con.close();
 			} catch (Exception e) {
-				// TODO: handle exception
 				e.printStackTrace();
 			}
 		}
-		return list;
+		return null;
 	}
 
 	public void write(Notice notice) {
@@ -243,4 +253,53 @@ public class NoticeDao {
 
 		}
 	}
+	
+	public int totalRow(String str) {
+		try {
+			Class.forName(CommonDao.driver);
+			
+			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
+			
+			String sql = "select count(no) from notice ";
+			
+			switch (str) {
+			case "old": // 지난 공지 조건 추가
+				sql += " where ENDDATE < sysdate-1 ";
+				break;
+			case "res": // 예약 공지 조건 추가
+				sql += " where STARTDATE > sysdate ";
+				break;
+			case "cur": // 현재 공지 조건 추가
+				sql += " where STARTDATE <= SYSDATE and ENDDATE>= sysdate-1 ";
+				break;
+			default: // 모든 공지니까 조건이 필요 없다.
+				break;
+			}
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next())
+				return rs.getInt("count(no)");
+		}
+		catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(rs != null)
+					rs.close();
+				if(pstmt != null)
+					pstmt.close();
+				if(con != null)
+					con.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
+	
 }
