@@ -29,12 +29,12 @@
 taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 <c:forEach var="qna" items="${list}">
 <c:if test="${qna.levNo==0}">
-<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a><br/>${qna.content}<br/>${qna.writer} / ${qna.wdate} / ${qna.hit}<br/>
+${qna.no}/<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a><br/>${qna.content}<br/>${qna.writer} / ${qna.wdate} / ${qna.hit}<br/>
 </c:if>
 <c:if test="${qna.levNo>=1}">
 <!-- 답변이므로 제목을 출력하기 전에 들여쓰기 처리를 한다 -->
 <c:forEach begin="1" end="${qna.levNo*5}">&nbsp;</c:forEach>
-<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a> - ${qna.writer} / ${qna.wdate} / ${qna.hit}<br/>
+${qna.no}/<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a> - ${qna.writer} / ${qna.wdate} / ${qna.hit}<br/>
 </c:if>
 </c:forEach>
 <%-- <% } %> --%>
