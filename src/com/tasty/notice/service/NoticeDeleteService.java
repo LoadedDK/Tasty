@@ -5,16 +5,14 @@ package com.tasty.notice.service;
 
 import com.tasty.controller.ServiceInterface;
 import com.tasty.notice.dao.NoticeDao;
-import com.tasty.notice.dao.OracleNoticeDao;
 
 public class NoticeDeleteService implements ServiceInterface {
 
 	@Override
 	public Object service(Object obj) {
 		// TODO Auto-generated method stub
-		int no=(Integer)obj;
-		NoticeDao dao  = new OracleNoticeDao();// 객체 생성 및 호출
-		dao.delete(no); // 객체를 통한 메소드() 실현
+		NoticeDao dao = new NoticeDao();
+		dao.delete(obj);
 		return null;
 	}
 

@@ -7,7 +7,7 @@ package com.tasty.notice.model;
 import java.util.List;
 
 public class NoticeModel {
- // 게시판 리스트를 담은 LIst 객체 변수 선언
+ // 게시판 리스트를 담은 List 객체 변수 선언
 	private List<Notice> list;
 	private JspData jspData;
 	

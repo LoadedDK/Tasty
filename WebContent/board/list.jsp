@@ -58,8 +58,8 @@
 			<c:forEach var="i" begin="${jspData.startPage }"
 				end="${jspData.endPage }">
 				<!-- 블랭크가 들어가면 String이기때문에 오류가 발생한다.  -->
-[<a href="list.jsp?page=${i }">${i }</a>]
-</c:forEach>
+			[<a href="list.jsp?page=${i }">${i }</a>]
+			</c:forEach>
 
 			[<a
 				href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.page + 1 : jspData.totalPage }">&gt;</a>]

@@ -6,7 +6,7 @@ package com.tasty.notice.model;
 
 public class Notice {
 	int no;
-	String title, content, wdate, startDate, endDate;
+	String title, content, wdate, startDate, endDate,fileName;;
 
 	public int getNo() {
 		return no;
@@ -56,13 +56,22 @@ public class Notice {
 		this.endDate = endDate;
 	}
 
-	public Notice(int no, String title, String wdate, String startDate, String endDate) {
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public Notice(int no, String title, String wdate, String startDate, String endDate,String fileName) {
 		super();
 		this.no = no;
 		this.title = title;
 		this.wdate = wdate;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		this.fileName = fileName;
 	}
 
 	public Notice() {
