@@ -73,6 +73,13 @@ html, body {
 	margin-right: 50px;
 }
 
+#logout {
+	text-align: right;
+	font-weight: bolder;
+	color: white;
+	margin-right: 50px;
+}
+
 #login_img {
 	width: 34px;
 	height: 34px;

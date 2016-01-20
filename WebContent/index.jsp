@@ -41,8 +41,14 @@
 	</div>
 	
 	<div id="login_div">
-		<a href="loginProcess.jsp">
-		<span id="login">로그인</span>
+		<% if(session.getAttribute("id") != null) { %>
+			<a href="../member/logoutProcess.jsp">
+			<span id="logout"><%=session.getAttribute("name") %></span>
+		<% } else { %>
+			<a href="../member/loginProcess.jsp">
+			<span id="login">로그인</span>
+		<% } %>
+		
 		<img id="login_img" src="../img/login2.png">
 		</a>
 	</div>

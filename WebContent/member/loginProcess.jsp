@@ -13,6 +13,11 @@
 	login.setId("karlos");
 	login.setPw("4936");
 
-	session.setAttribute("login", service.service(login));
-	response.sendRedirect("index.jsp");
+	login = (Login) service.service(login);
+	
+	session.setAttribute("id", login.getId());
+	session.setAttribute("name", login.getName());
+	session.setAttribute("grade", login.getGrade());
+	
+	response.sendRedirect("../index.jsp");
 %>

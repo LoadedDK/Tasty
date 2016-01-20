@@ -119,7 +119,6 @@ public class NoticeDao {
 			// 5. 실행
 			pstmt.executeUpdate();
 			// 6. 표시
-			System.out.println("글 작성 완료!!");
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -310,29 +309,23 @@ public class NoticeDao {
 
 			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 
-			String sql = " select no,title, " + " to_char(wdate,'yyyy-mm-dd')wdate, "
-					+ " to_char(startdate,'yyyy-mm-dd')startDate, " + " to_char(enddate,'yyyy-mm-dd')endDate, "
-					+ " fileName from notice ";
+			String sql = " select no,title from notice ";
 
 			sql += " where startDate<= sysdate and endDate >= sysdate-1 ";
 
 			sql += " order by no desc ";
 
-			sql = "select rownum rnum, no, title, wdate, startDate, endDate, fileName from (" + sql + ")";
+			sql = "select rownum rnum, no, title from (" + sql + ")";
 
-			sql = "select no, title, wdate, startDate, endDate, fileName from (" + sql + ") "
-					+ "where rnum between ? and ?";
+			sql = "select no, title from (" + sql + ") where rnum <=10";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, startRow);
-			pstmt.setInt(2, endRow);
 
 			rs = pstmt.executeQuery();
 
 			list = new ArrayList<Notice>();
 			while(rs.next()) {
-				list.add(new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("wdate"),
-						rs.getString("startDate"), rs.getString("endDate"), rs.getString("fileName")));
+				list.add(new Notice(rs.getInt("no"), rs.getString("title")));
 			}
 			return list;
 		}
