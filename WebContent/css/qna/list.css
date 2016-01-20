@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 #listWrapper{
-	width: 960px;
+	width: 100%;
 }
 #Question{
 	border: 2px double rgb(0,205,205);
