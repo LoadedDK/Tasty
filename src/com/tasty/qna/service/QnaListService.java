@@ -49,7 +49,6 @@ public class QnaListService implements ServiceInterface {
 		endPage = startPage+pagesPerGroup-1;
 		if(endPage > totalPage) endPage = totalPage;
 		
-		System.out.println("QnaListService.service().totalRow : "+totalRow);
 		list = dao.list(startRow, endRow);
 		// jsp에 totalPage를 넘기기 위해서 JspData를 생성 후 담는다.
 		JspData jspData = new JspData();
