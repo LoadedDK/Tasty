@@ -1,16 +1,22 @@
 @CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+h2{
+	font-family: 'Hanna', sans-serif;
+}
 
 #listWrapper{
 	width: 100%;
 	font-family: "Nanum Gothic", sans-serif;
+	color: rgb(0, 100, 102);
 }
 #listWrapper a{
 	text-decoration: none;
 	color: rgb(0, 100, 102);
 }
 #Question{
-	background: rgb(0,205,205);
+	background: rgb(0, 176, 179);
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	margin-top: 10px;
@@ -22,7 +28,7 @@
 	float: left;
 	margin-left: 10px;
 	margin-bottom: 10px;
-	font-family: "HYHeadLine";
+	font-family: "HYHeadLine", sans-serif;
 	
 }
 #qTitle a{
@@ -32,16 +38,18 @@
 #qContent{
 	clear: both;
 	float: left;
+	color: rgb(204, 254, 255);
 }
 #qWriter{
 	float: right;
 	margin-right: 10px;
 	margin-top: 8px;
 	font-size: 10pt;
+	color: rgb(204, 254, 255);
 }
 #Answer{
-	border-bottom: 2px dotted rgb(0,205,205);
-	border-left: 2px dotted rgb(0,205,205);
+	border-bottom: 2px dotted rgb(0, 176, 179);
+	border-left: 2px dotted rgb(0, 176, 179);
 	padding: 2px;
 }
 #aTitle{
@@ -60,4 +68,7 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+#pageBtn{
+	margin-top: 10px;
 }
