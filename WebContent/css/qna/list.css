@@ -16,6 +16,7 @@ h2{
 	color: rgb(0, 100, 102);
 }
 #Question{
+	clear: both;
 	background: rgb(0, 176, 179);
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
@@ -71,4 +72,15 @@ h2{
 }
 #pageBtn{
 	margin-top: 10px;
+}
+#writebtn{
+	border: 1px solid;
+	width: 80px;
+	height: 25px;
+	float: right;
+	text-align: center;
+	background: rgb(0, 176, 179);
+	color: rgb(204, 254, 255);
+	margin-bottom: 10px;
+	cursor: pointer;
 }

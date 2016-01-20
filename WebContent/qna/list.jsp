@@ -27,6 +27,7 @@
 <body>
 <div id="listWrapper">
 <h2>QnA</h2>
+<button onclick="location='write.jsp'" id="writebtn">질문하기</button>
 <!-- jstl의 core를 사용하여 작성 
 taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 <c:forEach var="qna" items="${list}">
@@ -60,7 +61,6 @@ taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 [<a href="list.jsp?page=${jspData.totalPage>jspData.endPage?jspData.endPage+1:jspData.totalPage}">&gt;&gt;</a>] 
 [<a href="list.jsp?page=${jspData.totalPage}">끝</a>]
 </div><br/>
-<button onclick="location='write.jsp'">질문하기</button>
 </div>
 </body>
 </html>
