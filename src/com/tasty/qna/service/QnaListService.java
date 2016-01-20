@@ -19,7 +19,7 @@ public class QnaListService implements ServiceInterface {
 		int page = (Integer)obj;
 		int totalPage = 0;	// 전체 페이지 = (전체글수-1)/페이지당 줄 수+1
 		int totalRow = 0;	// 전체 글수 = DB에서 가져온다. DAO의 메소드 호출
-		int rowsPerPage = 20;	// 한 페이지에 보여줄 줄의 개수
+		int rowsPerPage = 10;	// 한 페이지에 보여줄 줄의 개수
 		int startRow = 0;	// DB에서 가져올 글의 첫번째 순서(rownum)번호
 		// startRow = (page-1)*rowsPerPage+1
 		int endRow = 0;	// DB에서 가져올 글의 마지막 순서(rownum)번호

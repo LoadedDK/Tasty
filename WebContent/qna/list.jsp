@@ -25,15 +25,17 @@
 </head>
 <body>
 <h2>질문답변 리스트</h2>
-글번호 | 제목 | 작성자 | 작성일 | 조회수<br/>
 <!-- jstl의 core를 사용하여 작성 
 taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 <c:forEach var="qna" items="${list}">
-${qna.no} | 
-<!-- 질문답변이므로 제목을 출력하기 전에 들여쓰기 처리를 한다 -->
+<c:if test="${qna.levNo==0}">
+<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a><br/>${qna.content}<br/>${qna.writer} / ${qna.wdate} / ${qna.hit}<br/>
+</c:if>
+<c:if test="${qna.levNo>=1}">
+<!-- 답변이므로 제목을 출력하기 전에 들여쓰기 처리를 한다 -->
 <c:forEach begin="1" end="${qna.levNo*5}">&nbsp;</c:forEach>
-<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a> | 
-${qna.writer} | ${qna.wdate} | ${qna.hit}<br/>
+<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a> - ${qna.writer} / ${qna.wdate} / ${qna.hit}<br/>
+</c:if>
 </c:forEach>
 <%-- <% } %> --%>
 <!-- 페이지 처리 : 반복문 -->
