@@ -5,14 +5,6 @@
 
 <%	
 	request.setCharacterEncoding("utf-8");
-
-	String no = request.getParameter("no");;
-	if(no!=null){
-	ServiceInterface service = new NoticeViewService();
-	request.setAttribute("notice", service.service(no));
-	System.out.println(no);
-
-
 %>
 	
 <!DOCTYPE html>
@@ -20,48 +12,66 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/board/board_view.css">
 </head>
-
-
-	<h2>공지사항 글보기</h2>
-	<table>
-		<tr>
-			<th>글번호</th>
-			<td>${notice.no }</td>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<td>${notice.title }</td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td>${notice.content }</td>
-		</tr>
-		<tr>
-			<th>작성일</th>
-			<td>${notice.wdate }</td>
-		</tr>
-		<tr>
-			<th>시작일</th>
-			<td>${notice.startDate}</td>
-		</tr>
-		<tr>
-			<th>종료일</th>
-			<td>${notice.endDate }</td>
-		</tr>
-		<tr>
-			<th></th>
-			<td><img src="../img/${notice.fileName}"> </td>
-		</tr>
-		
-		
-	</table>
-	<br>
-
-	<button onclick="location = 'list.jsp'">글리스트</button>
-	<button onclick="location = 'update.jsp?no=${notice.no }' ">글수정</button>
-	<button
-		onclick="location = 'deleteProcess.jsp?no=${notice.no }&page=${param.page}' ">글삭제</button>
+<body>
+	<%
+		String no = request.getParameter("no");;
+		if(no!=null){
+		ServiceInterface service = new NoticeViewService();
+		request.setAttribute("notice", service.service(no));
+		System.out.println(no);
+	%>
+	<section>
+			<div id="articleTop">
+				<div id="articleTitle"><h3>${notice.title }</h3> </div>	
+				<div id="articleWdate">${notice.wdate}</div>	
+				<div id="articleContent">${notice.content}</div>	
+				<div id="articleImage"><img src="../img/${notice.fileName }"></div>	
+			</div>
+			<br>
+			<div>
+				<ul>
+					<li><a href="list.jsp">글리스트</a></li>
+					<li><a href="update.jsp?no=${notice.no }">글수정</a></li>
+					<li><a href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a></li>
+				</ul>	
+			</div>
+	</section>
+<!-- 	<h2>공지사항 글보기</h2> -->
+<!-- 	<table> -->
+<!-- 		<tr> -->
+<!-- 			<th>글번호</th> -->
+<%-- 			<td>${notice.no }</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<th>제목</th> -->
+<%-- 			<td>${notice.title }</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<th>내용</th> -->
+<%-- 			<td>${notice.content }</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<th>작성일</th> -->
+<%-- 			<td>${notice.wdate }</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<th>시작일</th> -->
+<%-- 			<td>${notice.startDate}</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<th>종료일</th> -->
+<%-- 			<td>${notice.endDate }</td> --%>
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<th></th> -->
+<%-- 			<td><img src="../img/${notice.fileName}"> </td> --%>
+<!-- 		</tr> -->
+<!-- 	<br> -->
+<!-- 	<button onclick="location = 'list.jsp'">글리스트</button> -->
+<%-- 	<button onclick="location = 'update.jsp?no=${notice.no }' ">글수정</button> --%>
+<%-- 	<button onclick="location = 'deleteProcess.jsp?no=${notice.no }&page=${param.page}' ">글삭제</button> --%>
 	<%
 		} // 글번호가 넘어온 경우 처리
 		else { // 글번호가 넘어오지 않는 경우 처리
@@ -74,4 +84,5 @@
 	<%
 		}
 	%>
+</body>
 </html>
