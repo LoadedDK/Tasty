@@ -33,21 +33,20 @@
 <body>
 	<section>
 		<div>
+			<h2>맛집 이야기</h2>
 			<c:forEach var="board" items="${list }">
-				<ul>
-					<li><div id="board_list">
-							<span id="list_nt"> ${board.getNo()}<br> <a
-								href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }
-							</a></span> <br>
-							<br>
-							<br>
+				<div id="board_list">
+							<div id="list_nt"> ${board.getNo()}<br> 
+								<a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }</a>
+							</div> 
+							<br><br><br>
 							<div id="list_wwh">${board.writer} / ${board.wdate} /
 								${board.hit}</div>
 							<div id="list_img">
 								<img alt="사진" src="../img/${board.fileName }">
 							</div>
-						</div></li>
-				</ul>
+						</div>
+						<br>
 			</c:forEach>
 		</div>
 		<div id="pageMove">

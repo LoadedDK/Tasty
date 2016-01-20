@@ -1,15 +1,14 @@
 @CHARSET "UTF-8";
-ul{
-	list-style: none;
-}
+
 #board_list{
 	border: 3px solid rgb(0,205,205);
-	
 }
 
+a{text-decoration: none;}
+
 #list_tn{
-	left: auto;
-}
+	left: 
+	}
 
 #list_wwh{
 	float: left;
@@ -17,8 +16,15 @@ ul{
 }
 
 
+#list_img{
+	clear: both;
+	width: 200px;
+	height: 100px;	
+}
+
 #list_img img{
 	clear: both;
 	width: 200px;
 	height: 100px;	
 }
+
