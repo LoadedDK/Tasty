@@ -1,21 +1,43 @@
 @CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 #listWrapper{
 	width: 100%;
+	font-family: "Nanum Gothic", sans-serif;
+}
+#listWrapper a{
+	text-decoration: none;
+	color: rgb(0, 100, 102);
 }
 #Question{
-	border: 2px double rgb(0,205,205);
+	background: rgb(0,205,205);
+	border-top-left-radius: 25px;
+	border-bottom-right-radius: 25px;
 	margin-top: 10px;
 	padding: 5px;
+	height: 75px;
 }
 #qTitle{
+	color: rgb(204, 254, 255);
 	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	font-family: "HYHeadLine";
+	
+}
+#qTitle a{
+	color: rgb(204, 254, 255);
+	font-size: 25pt;
 }
 #qContent{
+	clear: both;
 	float: left;
 }
 #qWriter{
 	float: right;
+	margin-right: 10px;
+	margin-top: 8px;
+	font-size: 10pt;
 }
 #Answer{
 	border-bottom: 2px dotted rgb(0,205,205);
@@ -27,4 +49,15 @@
 }
 #aWriter{
 	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+	font-size: 10pt;
+}
+.textOver{
+	display: inline-block;
+	width: 700px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

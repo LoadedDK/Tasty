@@ -26,21 +26,21 @@
 </head>
 <body>
 <div id="listWrapper">
-<h2>질문답변 리스트</h2>
+<h2>QnA</h2>
 <!-- jstl의 core를 사용하여 작성 
 taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 <c:forEach var="qna" items="${list}">
 <c:if test="${qna.levNo==0}">
 <div id="Question">
-<div id="qTitle">${qna.no}/<a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a></div><br/>
-<div id="qContent">${qna.content}</div><br/>
+<div id="qTitle" class="textOver">${qna.no}. <a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a></div><br/>
+<div id="qContent" class="textOver">${qna.content}</div><br/>
 <div id="qWriter">${qna.writer} / ${qna.wdate} / ${qna.hit}</div><br/>
 </div>
 </c:if>
 <c:if test="${qna.levNo>=1}">
 <!-- 답변이므로 제목을 출력하기 전에 들여쓰기 처리를 한다 -->
 <div id="Answer">
-<div id="aTitle">${qna.no}/
+<div id="aTitle" class="textOver">${qna.no}.
 <c:forEach begin="1" end="${qna.levNo*5}">&nbsp;</c:forEach>
 <a href="view.jsp?no=${qna.no}&page=${jspData.page}">${qna.title}</a></div>
 <div id="aWriter">${qna.writer} / ${qna.wdate} / ${qna.hit}</div><br/>
