@@ -12,9 +12,9 @@
 <body>
 <div id="wrapper">
 	<header>
-		header
-	</header>
-	<nav>
+		<div id="title">
+			<a href="../index.jsp"><span>오늘의 맛집</span></a>
+		</div>
 		<div id="nav">
 			<a href="../notice/list.jsp">오늘의 맛집</a>
 			<a href="../board/list.jsp">맛집 이야기</a>
@@ -22,12 +22,12 @@
 			<a href="../member/mypage.jsp">마이페이지</a>
 			<a href="../member/list.jsp">회원관리</a>
 		</div>
-	</nav>
-	<article>
+	</header>
+	<div id="content">
 		<section>
 			<decorator:body />
 		</section>
-	</article>
+	</div>
 	<footer>
 		footer
 	</footer>
