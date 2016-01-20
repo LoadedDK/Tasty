@@ -15,6 +15,7 @@
 </div>
 
 <div id="content">
+	<div id="back"></div>
 	<div id="nav_main">
 		<a href="./notice/list.jsp">오늘의 맛집</a>
 		<a href="./board/list.jsp">맛집 이야기</a>
@@ -23,8 +24,8 @@
 		<a href="./member/list.jsp">회원관리</a>
 	</div>
 	
-	<div id="login">
-		로그인
+	<div id="login_div">
+		<span id="login">로그인</span>
 		<img id="login_img" src="../img/login2.png">
 	</div>
 	
