@@ -29,7 +29,7 @@ td, th {
 </head>
 <body>
 	<%
-String noStr = request.getParameter("no"); 
+String noStr = request.getParameter("no");
 if(noStr!=null){
 ServiceInterface service = new BoardViewService();
 request.setAttribute("board", service.service(Integer.parseInt(noStr)));
@@ -70,7 +70,7 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));
 
 	<button onclick="location = 'list.jsp'">글리스트</button>
 	<button onclick="location = 'update.jsp?no=${board.no }' ">글수정</button>
-	<button onclick="location = 'deleteProcess.jsp?no=${board.no }' ">글삭제</button>
+	<button onclick="location = 'deleteProcess.jsp?no=${board.no }&page=${param.page}' ">글삭제</button>
 	<%
 } // 글번호가 넘어온 경우 처리
     else{ // 글번호가 넘어오지 않는 경우 처리

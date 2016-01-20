@@ -15,7 +15,9 @@
 </div>
 
 <div id="content">
-	<a href="#">오늘의 맛집</a>
+	<a href="notice.list.jsp" class="">오늘의 맛집</a>
+	<a href="board/list.jsp">맛집 이야기</a>
+	<a href="qna/list.jsp">QnA</a>
 	<br>
 	
 	<span class="logo">오늘의 맛집</span>

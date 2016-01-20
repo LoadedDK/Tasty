@@ -24,7 +24,7 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 	제목:<input name="title" value="${board.title }" /><br/>
 	내용:<textarea rows="5" cols="40" name="content" > ${board.content }</textarea><br/>
 	글쓴이:<input name="writer" value="${board.writer }" readonly="readonly"/><br/>
-	첨부파일: <input type="file" name="fileName" value="${board.fileName }"><br/>
+	첨부파일: <input type="file" name="fileName"><br/>
 	<button>작성</button>
 </form>
 </body>

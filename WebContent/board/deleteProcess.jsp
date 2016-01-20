@@ -1,13 +1,9 @@
+<%@page import="com.tasty.board.service.BoardDeleteService"%>
+<%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-
-</head>
-<body>
-
-</body>
-</html>
+<%
+ServiceInterface service = new BoardDeleteService();
+service.service(Integer.parseInt(request.getParameter("no")));
+response.sendRedirect("list.jsp?page="+Integer.parseInt(request.getParameter("page")));
+%>

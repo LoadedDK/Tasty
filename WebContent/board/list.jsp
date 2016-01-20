@@ -48,7 +48,7 @@ table{  border-style: solid;
 	<c:forEach var="board" items="${list }">
 	<tr>
     <th>	${board.getNo() }
-	<th><a href="view.jsp?no=${board.no}">${board.title } </a>
+	<th><a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title } </a>
 	</th><th> ${board.writer }
 	</th><th> ${board.wdate } 
 	</th><th> ${board.hit } 
@@ -72,5 +72,6 @@ table{  border-style: solid;
 [<a href="list.jsp?page=${jspData.totalPage }">끝</a>]
 <br><br>
 	<button onclick="location='write.jsp'">글쓰기</button>
+	<button onclick="location='../index.jsp'">돌아가기</button>
 </body>
 </html>
