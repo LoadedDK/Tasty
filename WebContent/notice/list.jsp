@@ -62,12 +62,12 @@ th {
 						<%-- ${board } --%>
 						<a href="view.jsp?no=${notice.no}&page=${jspData.page}">${notice.title }</a><br>
 							${notice.content}<br>
-							${notice.wdate}<br>
-							${notice.startDate}
+							게시일:${notice.wdate}<br>
+							공지시작일:${notice.startDate}
 					</div>
 					
 					<div class="list_img">
-							<img src="../img/food.jpg">
+							<img src="../img/${notice.fileName }">
 					</div>
 				</li>
 			</c:forEach>

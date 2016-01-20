@@ -38,7 +38,7 @@
 			<td>${notice.content }</td>
 		</tr>
 		<tr>
-			<th>작성자</th>
+			<th>작성일</th>
 			<td>${notice.wdate }</td>
 		</tr>
 		<tr>
@@ -48,6 +48,10 @@
 		<tr>
 			<th>종료일</th>
 			<td>${notice.endDate }</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><img src="../img/${notice.fileName}"> </td>
 		</tr>
 		
 		

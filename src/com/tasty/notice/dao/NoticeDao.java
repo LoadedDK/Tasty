@@ -106,14 +106,16 @@ public class NoticeDao {
 			// 2. 연결
 			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			// 3. sql 작성
-			String sql = " insert into notice(no,title,content,startDate,endDate) "
-					+ " values(notice_seq.nextval,?,?,?,? ) ";
+			String sql = " insert into notice(no,title,content,startDate,endDate,fileName) "
+					+ " values(notice_seq.nextval,?,?,?,?,? ) ";
 			// 4. 상태 실행및 데이터 입력
+			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, notice.getTitle());
 			pstmt.setString(2, notice.getContent());
 			pstmt.setString(3, notice.getStartDate());
 			pstmt.setString(4, notice.getEndDate());
+			pstmt.setString(5, notice.getFileName());
 			// 5. 실행
 			pstmt.executeUpdate();
 			// 6. 표시
