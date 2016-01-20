@@ -7,5 +7,7 @@
 <%
 	ServiceInterface service = new MemberWriteService();
 	service.service(member);
-	response.sendRedirect("list.jsp");
 %>
+
+회원가입에 성공하였습니다.<br>
+3초후에 메인 페이지로 이동합니다.

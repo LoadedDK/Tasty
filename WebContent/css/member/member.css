@@ -2,21 +2,43 @@
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-table {
-	border-collapse: collapse;
+/* list */
+
+body a {
+	color: rgb(0,205,205);
+	text-decoration: none;
 }
 
-th {
-	background: black;
-	color: white;
-	width: 60px;
+body a:visited {
+	color: rgb(0,205,205);
+	text-decoration: none;
 }
 
-td {
-	width: 200px;
-	border: solid 1px #888;
+
+
+/* register */
+
+#content {
+	width: 300px;
+	margin: 0 auto;
+	padding: 0 50px;
 }
 
-th, td {
-	padding: 10px;
+#content ul {
+	list-style: none;
+	text-align: left;
+	padding: 0;
+}
+
+#content ul li {
+	line-height: 250%;
+}
+
+#content ul li label {
+	width: 120px;
+	float: left;
+}
+
+#tel2, #tel3 {
+	width: 41px;
 }

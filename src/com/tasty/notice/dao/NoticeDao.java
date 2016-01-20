@@ -303,7 +303,7 @@ public class NoticeDao {
 		return 0;
 	}
 	
-	public List<Notice> listMain(int startRow, int endRow) {
+	public List<Notice> listMain() {
 		try {
 			Class.forName(CommonDao.driver);
 
@@ -348,39 +348,4 @@ public class NoticeDao {
 		return null;
 	}
 	
-	public int totalRowMain() {
-		try {
-			Class.forName(CommonDao.driver);
-
-			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
-
-			String sql = "select count(no) from notice ";
-
-			sql += " where STARTDATE <= SYSDATE and ENDDATE>= sysdate-1 ";
-
-			pstmt = con.prepareStatement(sql);
-
-			rs = pstmt.executeQuery();
-
-			if(rs.next())
-				return rs.getInt("count(no)");
-		}
-		catch(ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-		finally {
-			try {
-				if(rs != null)
-					rs.close();
-				if(pstmt != null)
-					pstmt.close();
-				if(con != null)
-					con.close();
-			}
-			catch(SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return 0;
-	}
 }

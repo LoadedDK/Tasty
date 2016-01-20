@@ -11,9 +11,7 @@
     	cpage=Integer.parseInt(pageStr);
 	// NoticeListService 객체 생성 후 호출
 	ServiceInterface service = new MainNoticeListService();
-	NoticeModel model = (NoticeModel) service.service(cpage);
-	request.setAttribute("list", model.getList());
-	request.setAttribute("jspData", model.getJspData());
+	request.setAttribute("list", service.service(null));
 	
 	int i = 1;
 %>
@@ -24,7 +22,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>오늘의 맛집</title>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 <script src="../js/main.js"></script>
 </head>
 <body>
@@ -54,26 +51,20 @@
 	</div>
 </div>
 
-<br><br><br><br><br>
-<br><br><br><br><br>
 
 <div id="content">
 	
 	<span id="logo">오늘의 맛집</span>
 	
 	<div id="notice_list">
-		<span id="list_up" class="fa fa-chevron-up" onclick="list_up()"></span>
-		<br>
 			<!-- 맛집 리스트 작성 -->
 			<div id="notice_list_inner">
 				<table>
 				<c:forEach var="notice" items="${list }">
-					<tr><td><%=i++ %>. ${notice.title }</td></tr>
+					<tr><td><a href="../notice/view.jsp?no=${notice.no }"><%=i++ %>. ${notice.title }</a></td></tr>
 				</c:forEach>
 				</table>
 			</div>
-		<br>
-		<span id="list_down" class="fa fa-chevron-down" onclick="list_down()"></span>
 	</div>
 </div>
 
