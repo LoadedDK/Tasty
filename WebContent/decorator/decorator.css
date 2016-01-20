@@ -60,7 +60,8 @@ header {
 	min-height: 813px;
 	width: 980px;
 	margin: 0 auto;
-	padding-top: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 footer {
