@@ -15,14 +15,17 @@
 </div>
 
 <div id="content">
-	<a href="./notice/list.jsp">오늘의 맛집</a>
-	<a href="./board/list.jsp">맛집 이야기</a>
-	<a href="./qna/list.jsp">QnA</a>
-	<a href="./member/mypage.jsp">마이페이지</a>
-	<a href="./member/list.jsp">회원관리</a>
+	<div id="nav_main">
+		<a href="./notice/list.jsp">오늘의 맛집</a>
+		<a href="./board/list.jsp">맛집 이야기</a>
+		<a href="./qna/list.jsp">QnA</a>
+		<a href="./member/mypage.jsp">마이페이지</a>
+		<a href="./member/list.jsp">회원관리</a>
+	</div>
+	
 	<br>
 	
-	<span class="logo">오늘의 맛집</span>
+	<span id="logo">오늘의 맛집</span>
 	
 	<div id="notice_list">
 		<span id="list_up" class="fa fa-chevron-up" onclick="list_up()"></span>
