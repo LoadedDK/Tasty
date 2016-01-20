@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +12,9 @@
 </head>
 <body>
 
+<div id="back"></div>
+
 <div id="header">
-
-</div>
-
-<div id="content">
-	<div id="back"></div>
 	<div id="nav_main">
 		<a href="./notice/list.jsp">오늘의 맛집</a>
 		<a href="./board/list.jsp">맛집 이야기</a>
@@ -24,17 +23,18 @@
 		<a href="./member/list.jsp">회원관리</a>
 	</div>
 	
-	
 	<div id="login_div">
-		<a href="#">
+		<a href="loginProcess.jsp">
 		<span id="login">로그인</span>
 		<img id="login_img" src="../img/login2.png">
 		</a>
 	</div>
-	
-	
-	<br><br><br><br><br>
-	<br><br><br><br><br>
+</div>
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+<div id="content">
 	
 	<span id="logo">오늘의 맛집</span>
 	
@@ -44,11 +44,13 @@
 			<!-- 맛집 리스트 작성 -->
 			<div id="notice_list_inner">
 				<table>
+				<c:forEach var="member" items="${list }">
 					<tr><td>1. 화상손만두</td></tr>
 					<tr><td>2. 민주네 떡볶이</td></tr>
 					<tr><td>3. 란주탕수육</td></tr>
 					<tr><td>4. 맛있다해</td></tr>
 					<tr><td>5. 응</td></tr>
+				</c:forEach>
 				</table>
 			</div>
 		<br>

@@ -1,17 +1,17 @@
 package com.tasty.member.model;
 
 public class Login {
-	public static String id;
-	public static String pw;
-	public static String name;
-	public static int grade;
+	public String id;
+	public String pw;
+	public String name;
+	public int grade;
 
 	public Login() {}
 	
 	public Login(String id, String name, int grade) {
-		Login.id = id;
-		Login.name = name;
-		Login.grade = grade;
+		this.id = id;
+		this.name = name;
+		this.grade = grade;
 	}
 	
 	public String getId() {
@@ -19,7 +19,7 @@ public class Login {
 	}
 
 	public void setId(String id) {
-		Login.id = id;
+		this.id = id;
 	}
 
 	public String getPw() {
@@ -27,7 +27,7 @@ public class Login {
 	}
 
 	public void setPw(String pw) {
-		Login.pw = pw;
+		this.pw = pw;
 	}
 	
 	public String getName() {
@@ -35,7 +35,7 @@ public class Login {
 	}
 
 	public void setName(String name) {
-		Login.name = name;
+		this.name = name;
 	}
 
 	public int getGrade() {
@@ -43,7 +43,7 @@ public class Login {
 	}
 
 	public void setGrade(int grade) {
-		Login.grade = grade;
+		this.grade = grade;
 	}
 
 	@Override
