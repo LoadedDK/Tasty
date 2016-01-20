@@ -13,10 +13,10 @@
 <body>
 <div id="wrapper">
 	<header>
-		<div id="title">
+		<div id="main_title">
 			<a href="../index.jsp"><span>오늘의 맛집</span></a>
 		</div>
-		<div id="nav">
+		<div id="main_nav">
 			<a href="../notice/list.jsp">오늘의 맛집</a>
 			<a href="../board/list.jsp">맛집 이야기</a>
 			<a href="../qna/list.jsp">QnA</a>

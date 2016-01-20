@@ -15,33 +15,33 @@ header {
 	height: 60px;
 }
 
-#title {
+#main_title {
 	float: left;
 	padding: 10px 10px 10px 0;
 	margin-left: 150px;
 }
 
-#title span {
+#main_title span {
 	font-family: 'Hanna', sans-serif;
 	font-size: 30pt;
 	color: white;
 }
 
-#title a {
+#main_title a {
 	text-decoration: none;
 }
 
-#title a:visited {
+#main_title a:visited {
 	color: white;
 	text-decoration: none;
 }
 
-#nav {
+#main_nav {
 	padding: 20px;
 	float: left;
 	text-align: left;
 }
-	#nav a {
+	#main_nav a {
 		color: white;
 		text-decoration: none;
 		margin: 0 5px;
@@ -50,7 +50,7 @@ header {
 		font-weight: bolder;
 	}
 	
-	#nav a:visited {
+	#main_nav a:visited {
 		color: white;
 	}
 
