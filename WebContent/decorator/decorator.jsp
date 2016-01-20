@@ -24,7 +24,7 @@
 			<a href="../member/list.jsp">회원관리</a>
 		</div>
 	</header>
-	<div id="content">
+	<div id="content_wrapper">
 		<section>
 			<decorator:body />
 		</section>

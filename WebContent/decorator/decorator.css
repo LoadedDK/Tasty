@@ -54,11 +54,12 @@ header {
 		color: white;
 	}
 
-#content {
-	margin: 0 150px;
+#content_wrapper {
 	text-align: center;
 	clear: both;
 	min-height: 813px;
+	width: 980px;
+	margin: 0 auto;
 }
 
 footer {
