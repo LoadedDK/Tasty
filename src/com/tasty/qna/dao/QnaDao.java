@@ -28,9 +28,9 @@ public class QnaDao {
 			// 2. DB 연결
 			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			// 3. sql 문장 작성
-			String sql = "select no, title, writer, to_char(wdate, 'yyyy-mm-dd') wdate, hit, levNo "
+			String sql = "select no, title, content, writer, to_char(wdate, 'yyyy-mm-dd') wdate, hit, levNo "
 					+ " from qna order by refNo desc, ordNo asc";
-			sql = "select rownum rnum, no, title, writer, wdate, hit, levNo from ("+sql+")";
+			sql = "select rownum rnum, no, title, content, writer, wdate, hit, levNo from ("+sql+")";
 			sql = "select * from ("+sql+") where rnum between ? and ?";
 			// 4. 실행 상태 - 데이터 셋팅
 			pstmt = con.prepareStatement(sql);
@@ -44,7 +44,7 @@ public class QnaDao {
 			list = new ArrayList<Qna>();
 			// 모든 rs에 있는 데이터를 qna에 담고 qna를 List에 담는다.
 			while (rs.next()) {
-				list.add(new Qna(rs.getInt("no"), rs.getString("title"), rs.getString("writer"), 
+				list.add(new Qna(rs.getInt("no"), rs.getString("title"), rs.getString("content"), rs.getString("writer"), 
 						rs.getString("wdate"), rs.getInt("hit"), rs.getInt("levNo")));
 			}
 		} catch (Exception e) {
