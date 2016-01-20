@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	background: black;
+	color: white;
+	width: 60px;
+}
+
+td {
+	width: 200px;
+	border: solid 1px #888;
+}
+
+th, td {
+	padding: 10px;
+}

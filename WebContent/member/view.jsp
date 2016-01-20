@@ -10,23 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style type="text/css">
-	table{
-		border-collapse: collapse;
-	}
-	th{
-		background:black;
-		color: white;
-		width: 60px; 
-	}
-	td{
-		width:200px;
-		border: solid 1px #888;
-	}
-	th,td{
-		padding: 10px;
-	}
-</style>
+<link rel="stylesheet" type="text/css" href="../css/member/member.css">
 <title>Insert title here</title>
 </head>
 <body>
