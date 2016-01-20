@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+
+<!-- 레이아웃이 정의 되어 있는 xml 선언 -->
+	<property name="decorators-file" value="/WEB-INF/decorators.xml" />
+	<excludes file="${decorators-file}" />
+
+<!-- html을 분해해서 필요한 부분만 가져다 쓰기 위한 클래스 -->
+	<page-parsers>
+		<parser content-type="text/html"
+			class="com.opensymphony.module.sitemesh.parser.HTMLPageParser" />
+	</page-parsers>
+
+<!-- 분해한 html을 조립하기 위한 클래스 선언 -->
+	<decorator-mappers>
+		<mapper class="com.opensymphony.module.sitemesh.mapper.ConfigDecoratorMapper">
+			<param name="config" value="${decorators-file}" />
+		</mapper>
+	</decorator-mappers>
+	
+</sitemesh>
