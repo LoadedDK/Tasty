@@ -23,13 +23,18 @@
 		<a href="./member/list.jsp">회원관리</a>
 	</div>
 	
-	<br>
+	<div id="login">
+		로그인
+		<img id="login_img" src="../img/login2.png">
+	</div>
+	
+	<br><br><br>
 	
 	<span id="logo">오늘의 맛집</span>
 	
 	<div id="notice_list">
 		<span id="list_up" class="fa fa-chevron-up" onclick="list_up()"></span>
-		
+		<br>
 			<!-- 맛집 리스트 작성 -->
 			<div id="notice_list_inner">
 				<table>
@@ -40,7 +45,7 @@
 					<tr><td>5. 응</td></tr>
 				</table>
 			</div>
-		
+		<br>
 		<span id="list_down" class="fa fa-chevron-down" onclick="list_down()"></span>
 	</div>
 </div>
