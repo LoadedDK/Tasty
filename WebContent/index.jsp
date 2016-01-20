@@ -1,5 +1,22 @@
+<%@page import="com.tasty.notice.service.MainNoticeListService"%>
+<%@page import="com.tasty.notice.model.NoticeModel"%>
+<%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%
+	int cpage=1;
+    String pageStr=request.getParameter("page");
+    if(pageStr!=null)
+    	cpage=Integer.parseInt(pageStr);
+	// NoticeListService 객체 생성 후 호출
+	ServiceInterface service = new MainNoticeListService();
+	NoticeModel model = (NoticeModel) service.service(cpage);
+	request.setAttribute("list", model.getList());
+	request.setAttribute("jspData", model.getJspData());
+	
+	int i = 1;
+%>
 
 <!DOCTYPE html>
 <html>
@@ -44,12 +61,8 @@
 			<!-- 맛집 리스트 작성 -->
 			<div id="notice_list_inner">
 				<table>
-				<c:forEach var="member" items="${list }">
-					<tr><td>1. 화상손만두</td></tr>
-					<tr><td>2. 민주네 떡볶이</td></tr>
-					<tr><td>3. 란주탕수육</td></tr>
-					<tr><td>4. 맛있다해</td></tr>
-					<tr><td>5. 응</td></tr>
+				<c:forEach var="notice" items="${list }">
+					<tr><td><%=i++ %>. ${notice.title }</td></tr>
 				</c:forEach>
 				</table>
 			</div>

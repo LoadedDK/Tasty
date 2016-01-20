@@ -304,4 +304,90 @@ public class NoticeDao {
 		return 0;
 	}
 	
+	public List<Notice> listMain(int startRow, int endRow) {
+		try {
+			Class.forName(CommonDao.driver);
+
+			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
+
+			String sql = " select no,title, " + " to_char(wdate,'yyyy-mm-dd')wdate, "
+					+ " to_char(startdate,'yyyy-mm-dd')startDate, " + " to_char(enddate,'yyyy-mm-dd')endDate, "
+					+ " fileName from notice ";
+
+			sql += " where startDate<= sysdate and endDate >= sysdate-1 ";
+
+			sql += " order by no desc ";
+
+			sql = "select rownum rnum, no, title, wdate, startDate, endDate, fileName from (" + sql + ")";
+
+			sql = "select no, title, wdate, startDate, endDate, fileName from (" + sql + ") "
+					+ "where rnum between ? and ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+
+			rs = pstmt.executeQuery();
+
+			list = new ArrayList<Notice>();
+			while(rs.next()) {
+				list.add(new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("wdate"),
+						rs.getString("startDate"), rs.getString("endDate"), rs.getString("fileName")));
+			}
+			return list;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(rs != null)
+					rs.close();
+				if(pstmt != null)
+					pstmt.close();
+				if(con != null)
+					con.close();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
+	public int totalRowMain() {
+		try {
+			Class.forName(CommonDao.driver);
+
+			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
+
+			String sql = "select count(no) from notice ";
+
+			sql += " where STARTDATE <= SYSDATE and ENDDATE>= sysdate-1 ";
+
+			pstmt = con.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			if(rs.next())
+				return rs.getInt("count(no)");
+		}
+		catch(ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(rs != null)
+					rs.close();
+				if(pstmt != null)
+					pstmt.close();
+				if(con != null)
+					con.close();
+			}
+			catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
 }
