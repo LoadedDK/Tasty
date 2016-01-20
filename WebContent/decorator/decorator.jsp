@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="decorator.css">
+<link rel="stylesheet" type="text/css" href="../decorator/decorator.css">
 <title>[오늘의 맛집] <decorator:title /></title>
 </head>
 <body>
