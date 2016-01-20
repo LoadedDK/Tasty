@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+ul{
+	list-style: none;
+}
+#board_list{
+	border: 3px solid rgb(0,205,205);
+	
+}
+
+#list_tn{
+	left: auto;
+}
+
+#list_wwh{
+	float: left;
+	
+}
+
+
+#list_img img{
+	clear: both;
+	width: 200px;
+	height: 100px;	
+}
