@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+section div {
+	/* 	border: 2px solid rgb(0,205,205); */
+	
+}
+
+#articlecTitle {
+	padding: 15px 0 15px 0;
+	float: left;
+}
+
+#articleWdate {
+	padding: 5px 0 3px 0;
+}
+
+#articleWriter {
+	padding: 3px 0 15px 0;
+}
+
+#articleContent {
+	padding: 15px 0 15px 0;
+}
+
+#articleImg {
+	
+}
+
+img {
+	width: 300px;
+}
+
+a {
+	non
+}

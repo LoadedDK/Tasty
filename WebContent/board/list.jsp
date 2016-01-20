@@ -32,7 +32,11 @@
 <body>
 	<section>
 		<div id="content">
-			<h2>맛집 이야기</h2>
+			<div id="list_head"> <h2>맛집 이야기</h2></div>
+			<div id="list_btn">
+			<a id="write_btn" href="write.jsp">글쓰기</a>
+		</div><br>
+		
 			<ul>
 				<c:forEach var="board" items="${list }">
 					<li>
@@ -68,11 +72,8 @@
 			[<a href="list.jsp?page=${jspData.totalPage }">끝</a>]
 		</div>
 		<br>
-		<br>
-		<div id="list_btn">
-			<button onclick="location='write.jsp'">글쓰기</button>
-			<button onclick="location='../index.jsp'">돌아가기</button>
-		</div>
+	
+		
 	</section>
 </body>
 </html>

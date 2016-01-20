@@ -11,25 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/board/img.css">
-<style type="text/css">
-/*선택후 선택한 것에 대한 모양지정 */
-th {
-	background: black;
-	color: white;
-	width: 60px;
-}
-
-td {
-	width: 200px;
-	border: solid 1px #888;
-}
-
-td, th {
-	padding: 10px;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="../css/board/board_view.css">
 </head>
 <body>
 	<%
@@ -39,47 +21,25 @@ td, th {
 			request.setAttribute("board", service.service(Integer.parseInt(noStr)));
 	%>
 
-	<h2>회원 게시판 글보기</h2>
-	<table>
-		<tr>
-			<th>글번호</th>
-			<td>${board.no }</td>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<td>${board.title }</td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td>${board.content }</td>
-		</tr>
-		<tr>
-			<th>작성자</th>
-			<td>${board.writer }</td>
-		</tr>
-		<tr>
-			<th>작성일</th>
-			<td>${board.wdate }</td>
-		</tr>
-		<tr>
-			<th>조회수</th>
-			<td>${board.hit }</td>
-		</tr>
-		<tr>
-			<th>파일이름</th>
-			<td>${board.fileName }</td>
-		</tr>
-		<tr>
-			<th>이미지 사진</th>
-			<td><img src="../img/food.jpg" ></td>
-		</tr> 
-	</table>
-	<br>
+	<section>
 
-	<button onclick="location = 'list.jsp'">글리스트</button>
-	<button onclick="location = 'update.jsp?no=${board.no }' ">글수정</button>
-	<button
-		onclick="location = 'deleteProcess.jsp?no=${board.no }&page=${param.page}' ">글삭제</button>
+		<div id="articleTop">
+			<div id="articleTitle"><h3>${board.title }</h3> </div>	
+			<div id="articleWdate">${board.wdate}</div>	
+			<div id="articleWriter">${board.writer}</div>	
+			<div id="articleContent">${board.content}</div>	
+			<div id="articleImage"><img src="../img/${board.fileName}"> </div>	
+
+		
+		</div>
+
+		<br>
+		<a href="list.jsp">글리스트</a>
+		<a href="update.jsp?no=${board.no }">글수정</a>
+		<a href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
+
+	</section>
+
 	<%
 		} // 글번호가 넘어온 경우 처리
 		else { // 글번호가 넘어오지 않는 경우 처리
