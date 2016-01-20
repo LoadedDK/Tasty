@@ -51,10 +51,24 @@ html, body {
 		color: white;
 	}
 	
+#login_div {
+	float: right;
+	padding: 20px;
+}
+
+#login_div a {
+	text-decoration: none;
+}
+
+#login_div a:visited {
+	text-decoration: none;
+}
+	
 #login {
 	text-align: right;
-	padding: 20px;
-	margin-right: 40px;
+	font-weight: bolder;
+	color: white;
+	margin-right: 50px;
 }
 
 #login_img {
@@ -62,6 +76,9 @@ html, body {
 	height: 34px;
 	border-radius: 50%;
 	border: 3px solid #ffffff;
+	position: fixed;
+	top: 12px;
+	right: 20px;
 }
 
 #logo {

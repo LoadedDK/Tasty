@@ -24,12 +24,17 @@
 		<a href="./member/list.jsp">회원관리</a>
 	</div>
 	
+	
 	<div id="login_div">
+		<a href="#">
 		<span id="login">로그인</span>
 		<img id="login_img" src="../img/login2.png">
+		</a>
 	</div>
 	
-	<br><br><br>
+	
+	<br><br><br><br><br>
+	<br><br><br><br><br>
 	
 	<span id="logo">오늘의 맛집</span>
 	
