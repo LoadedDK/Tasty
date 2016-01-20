@@ -26,28 +26,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="../css/board/board_list.css">
+<link rel="stylesheet" type="text/css" href="../css/board/board_list.css">
 
 </head>
 <body>
 	<section>
-		<div>
+		<div id="content">
 			<h2>맛집 이야기</h2>
-			<c:forEach var="board" items="${list }">
-				<div id="board_list">
-							<div id="list_nt"> ${board.getNo()}<br> 
-								<a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }</a>
-							</div> 
-							<br><br><br>
-							<div id="list_wwh">${board.writer} / ${board.wdate} /
-								${board.hit}</div>
-							<div id="list_img">
-								<img alt="사진" src="../img/${board.fileName }">
-							</div>
+			<ul>
+				<c:forEach var="board" items="${list }">
+					<li>
+						<div class="list_content">
+							<a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }</a><br>
+							${board.content}<br>
+							${board.wdate}
 						</div>
-						<br>
-			</c:forEach>
+						
+						<div class="list_img">
+							<img src="../img/${board.fileName }">
+						</div>
+					</li>
+				</c:forEach>
+			</ul>
 		</div>
 		<div id="pageMove">
 			<!-- 	페이지 처리 = 반복문 처리-->
