@@ -1,10 +1,4 @@
 @CHARSET "UTF-8";
-
-section div {
-	/* 	border: 2px solid rgb(0,205,205); */
-	
-}
-
 #articlecTitle {
 	padding: 15px 0 15px 0;
 	float: left;
@@ -31,5 +25,24 @@ img {
 }
 
 a {
-	non
+	text-decoration: none;
+	color: black;
+	width: 70px;
+}
+a:VISITED{
+	color: black;
+}
+a:HOVER{
+	background: white;
+}
+ul {
+	list-style: none;
+	margin: auto;
+}
+ul li{
+	
+	width: 70px;
+	float: left;
+	border: 1px solid;
+	background: rgb(0,205,205);
 }

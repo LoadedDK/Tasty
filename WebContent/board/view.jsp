@@ -34,10 +34,15 @@
 		</div>
 
 		<br>
-		<a href="list.jsp">글리스트</a>
-		<a href="update.jsp?no=${board.no }">글수정</a>
-		<a href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
-
+		
+		<div>
+			<ul>
+			<li><a href="list.jsp">글리스트</a></li>
+			<li><a href="update.jsp?no=${board.no }">글수정</a></li>
+			<li><a href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a></li>
+			</ul>	
+		</div>
+		
 	</section>
 
 	<%
