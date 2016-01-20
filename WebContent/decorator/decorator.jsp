@@ -25,9 +25,7 @@
 		</div>
 	</header>
 	<div id="content_wrapper">
-		<section>
-			<decorator:body />
-		</section>
+		<decorator:body />
 	</div>
 	<footer>
 		footer
