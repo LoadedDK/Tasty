@@ -25,7 +25,7 @@
 <link rel="stylesheet" type="text/css" href="../css/qna/list.css">
 </head>
 <body>
-<div id="wrapper">
+<div id="listWrapper">
 <h2>질문답변 리스트</h2>
 <!-- jstl의 core를 사용하여 작성 
 taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->

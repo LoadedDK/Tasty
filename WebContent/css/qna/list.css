@@ -1,8 +1,12 @@
 @CHARSET "UTF-8";
 
+#listWrapper{
+	width: 960px;
+}
 #Question{
 	border: 2px double rgb(0,205,205);
 	margin-top: 10px;
+	padding: 5px;
 }
 #qTitle{
 	float: left;
@@ -16,6 +20,7 @@
 #Answer{
 	border-bottom: 2px dotted rgb(0,205,205);
 	border-left: 2px dotted rgb(0,205,205);
+	padding: 2px;
 }
 #aTitle{
 	float: left;
