@@ -19,7 +19,7 @@ public class NoticeDao {
 	List<Notice> list = null;
 	Notice notice = null;
 
-	public List<Notice> list(String str, int startRow, int endRow) {
+	public List<Notice> list(String period, int startRow, int endRow) {
 		// TODO Auto-generated method stub
 		// 필요한 객체 선언 - try 밖에 선언 - close()
 		// 글리스트 - 열결, 상태, 결과 객체가 필요
@@ -36,15 +36,15 @@ public class NoticeDao {
 					+ " to_char(startdate,'yyyy-mm-dd')startDate, " + " to_char(enddate,'yyyy-mm-dd')endDate, "
 					+ " fileName from notice ";
 			// 공지 일정에 따른 where 추가
-			switch (str) {
+			switch (period) {
 			case "old": // 지난 공지 조건 추가
-				sql += " where ENDDATE < sysdate-1 ";
+				sql += " where endDate < sysdate-1 ";
 				break;
 			case "res": // 예약 공지 조건 추가
-				sql += " where STARTDATE > sysdate ";
+				sql += " where startDate> sysdate ";
 				break;
 			case "cur": // 현재 공지 조건 추가
-				sql += " where STARTDATE <= SYSDATE and ENDDATE>= sysdate-1 ";
+				sql += " where startDate<= sysdate and endDate >= sysdate-1 ";
 				break;
 			default: // 모든 공지니까 조건이 필요 없다.
 				break;
