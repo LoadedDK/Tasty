@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+#form_wrapper{
+	width: 600px;
+	height: auto;
+	margin: auto;
+	
+}
+
+#form_wrapper ul{
+	list-style: none;
+	
+}
+
+#form_wrapper ul li {
+	list-style: none;
+	margin: 10px 0;
+}
+
+#form_wrapper ul li label{
+	width: 100px;	
+	float: left;
+	color: rgb(0,205,205);
+	font-weight: bold;
+}
+
+#form_wrapper input {
+	width: 360px;
+	height: 20px;
+}
+
+#form_wrapper textarea {
+	width: 360px;
+	height: 80px;
+}
+
+#update_file{
+	padding: 0 136px ;
+	border: 1px solid #ccc;
+	
+}

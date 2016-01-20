@@ -15,17 +15,43 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/board/board_write.css">
 
 </head>
 <body>
 <h2>자유 게시판 글수정</h2>
-<form action="updateProcess.jsp" method="post" enctype="multipart/form-data">
-	글번호:<input type="hidden" name="no" value="${board.no}"/>
-	제목:<input name="title" value="${board.title }" /><br/>
-	내용:<textarea rows="5" cols="40" name="content" > ${board.content }</textarea><br/>
-	글쓴이:<input name="writer" value="${board.writer }" readonly="readonly"/><br/>
-	첨부파일: <input type="file" name="fileName"><br/>
-	<button>작성</button>
-</form>
+<br><br>
+	<form action="updateProcess.jsp" method="post" enctype="multipart/form-data">
+		<div id="form_wrapper">
+			<ul>
+			
+				<li>
+				<label>번호</label>
+				<input id="no" name="no" size="" value="${board.no}" readonly="readonly"/></li>
+
+				<li>
+				<label>제목</label>
+				<input id="title" name="title" size="" value="${board.title}"/></li>
+				
+				<li>
+				<label for="content">내용</label>
+				<textarea name="content" id="content">${board.content}</textarea></li>
+				
+				<li>
+				<label for="writer">글쓴이</label>
+				<input name="writer" id="writer"  value="${board.writer}" readonly="readonly"/></li>
+				
+				<li>
+				<label for="file">첨부파일명</label>
+				<span id="update_file">${board.fileName}</span></li>
+				
+				<li>
+				<label for="file">첨부파일</label>
+				<input type="file" name="fileName" id="file"></li>
+			</ul>
+			<button>작성</button>
+			<br>
+		</div>
+	</form>
 </body>
 </html>

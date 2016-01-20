@@ -22,27 +22,25 @@
 	%>
 
 	<section>
-
-		<div id="articleTop">
-			<div id="articleTitle"><h3>${board.title }</h3> </div>	
-			<div id="articleWdate">${board.wdate}</div>	
-			<div id="articleWriter">${board.writer}</div>	
-			<div id="articleContent">${board.content}</div>	
-			<div id="articleImage"><img src="../img/${board.fileName}"> </div>	
-
-		
+		<div id="articleMain">
+			<div id="articleTop">
+				<div id="articleTitle"><h3>${board.title }</h3> </div>	
+				<div id="articleWdate">${board.wdate}</div>	
+				<div id="articleWriter">${board.writer}</div>	
+				<div id="articleContent">${board.content}</div>	
+				<div id="articleImage"><img src="../img/${board.fileName}"> </div>	
+	
+			
+			</div>
+	
+			<br>
+			
+			<div id="btn_wrapper">
+				<a class="view_btn" href="list.jsp">글목록</a>
+				<a class="view_btn" href="update.jsp?no=${board.no }&page=${param.page}">글수정</a>
+				<a class="view_btn" href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
+			</div>
 		</div>
-
-		<br>
-		
-		<div>
-			<ul>
-			<li><a href="list.jsp">글리스트</a></li>
-			<li><a href="update.jsp?no=${board.no }">글수정</a></li>
-			<li><a href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a></li>
-			</ul>	
-		</div>
-		
 	</section>
 
 	<%

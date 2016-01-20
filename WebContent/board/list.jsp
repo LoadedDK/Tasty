@@ -32,10 +32,11 @@
 <body>
 	<section>
 		<div id="content">
-			<div id="list_head"> <h2>맛집 이야기</h2></div>
-			<div id="list_btn">
+			<div id="list_head"> <h2>맛집 이야기</h2>
+			</div>
+			<div id="btn_wrapper">
 			<a id="write_btn" href="write.jsp">글쓰기</a>
-		</div><br>
+			</div><br>
 		
 			<ul>
 				<c:forEach var="board" items="${list }">

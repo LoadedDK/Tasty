@@ -1,23 +1,43 @@
 <%@page import="com.tasty.board.service.BoardWriteService"%>
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" type="text/css"
+	href="../css/board/board_write.css">
 </head>
 <body>
-<h2>자유 게시판 글쓰기</h2>
-<form action="writeProcess.jsp" method="post" enctype="multipart/form-data">
-	제목:<input name="title" /><br/>
-	내용:<textarea rows="5" cols="40" name="content"> </textarea><br/>
-	글쓴이:<input name="writer" /><br/>
-	첨부파일 <input type="file" name="fileName"><br/>
-	<button>작성</button>
-</form>
+	<h2>자유 게시판 글쓰기</h2>
+	<br><br>
+	<form action="writeProcess.jsp" method="post" enctype="multipart/form-data">
+		<div id="form_wrapper">
+			<ul>
+			
+				<li>
+				<label>제목</label>
+				<input id="title" name="title" size="" /></li>
+				
+				<li>
+				<label for="content">내용</label>
+				<textarea name="content" id="content"> </textarea></li>
+				
+				<li>
+				<label for="writer">글쓴이</label>
+				<input name="writer" id="writer" /></li>
+				
+				<li>
+				<label for="file">첨부파일</label>
+				<input type="file" name="fileName" id="file"></li>
+				
+			</ul>
+			<button>작성</button>
+			<br>
+		</div>
+	</form>
 </body>
 </html>
