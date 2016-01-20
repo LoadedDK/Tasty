@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+#content {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+header {
+	border: 1px solid #888;
+	float: left;
+	margin-bottom: 10px;
+	width: 200px;
+}
+
+#nav_main {
+	padding: 20px;
+	width: 450px;
+	height: 20px;
+	float: left;
+	text-align: left;
+}
+	#nav_main a {
+		color: white;
+		text-decoration: none;
+		margin: 0 5px;
+		font-family: "Nanum Gothic", sans-serif;
+		font-size: 12pt;
+		font-weight: bolder;
+	}
+	
+	#nav_main a:visited {
+		color: white;
+	}
+
+nav {
+	border: 1px solid #888;
+	float: right;
+	margin-bottom: 10px;
+	width: 810px;
+}
+
+article {
+	border: 1px solid #888;
+	clear: both;
+	width: 1024px;
+}
+
+footer {
+	border: 1px solid #888;
+	margin-top: 10px;
+	width: 1024px;
+}

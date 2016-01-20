@@ -6,16 +6,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/board_decorator.css">
+<link rel="stylesheet" type="text/css" href="decorator.css">
 <title>[오늘의 맛집] <decorator:title /></title>
 </head>
 <body>
-<div id="All">
+<div id="content">
 	<header>
 		header
 	</header>
 	<nav>
-		nav
+		<div id="nav">
+			<a href="./notice/list.jsp">오늘의 맛집</a>
+			<a href="./board/list.jsp">맛집 이야기</a>
+			<a href="./qna/list.jsp">QnA</a>
+			<a href="./member/mypage.jsp">마이페이지</a>
+			<a href="./member/list.jsp">회원관리</a>
+		</div>
 	</nav>
 	<article>
 		<section>
