@@ -352,7 +352,7 @@ public class MemberDao {
 			conn = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			stmt = conn.createStatement();
 			
-			String sql = "select count(id) from member";
+			String sql = "select count(id) from member where not grade=9";
 			
 			rs = stmt.executeQuery(sql);
 			

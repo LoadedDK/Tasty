@@ -15,10 +15,12 @@
 <body>
 <form action="updateProcess.jsp" method="post">
 	아이디 : <input type="text" name="id" value="${member.id }" readonly="readonly" /><br>
+	비밀번호 : <input type="password" name="pw" /><br>
+	비밀번호 확인 : <input type="password" /><br>
 	이름 : <input type="text" name="name" value="${member.name }" /><br>
 	생년월일 : <input type="text" name="birth" value="${member.birth }" /><br>
 	연락처 : <input type="text" name="tel" value="${member.tel }" /><br>
-	이메일 : <input type="text" name="email" value="${member.email }" /><br>
+	이메일 : <input type="email" name="email" value="${member.email }" /><br>
 	<button>작성</button>
 </form>
 </body>

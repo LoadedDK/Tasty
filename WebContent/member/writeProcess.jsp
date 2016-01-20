@@ -1,11 +1,11 @@
+<%@page import="com.tasty.member.service.MemberWriteService"%>
+<%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<jsp:useBean id="member" class="com.tasty.member.model.Member" />
+<% request.setCharacterEncoding("utf-8"); %>
+<jsp:setProperty name="member" property="*" />
+<%
+	ServiceInterface service = new MemberWriteService();
+	service.service(member);
+	response.sendRedirect("list.jsp");
+%>

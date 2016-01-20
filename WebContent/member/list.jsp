@@ -58,5 +58,9 @@
 	[<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage+1 : jspData.totalPage }">&gt;&gt;</a>] 
 	[<a href="list.jsp?page=${jspData.totalPage }">끝</a>]
 
+	<br><br>
+
+	<button onclick="location='write.jsp'">회원가입</button>
+
 </body>
 </html>
