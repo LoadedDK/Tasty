@@ -16,12 +16,14 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/board/board_write.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/qna/writeNull.js"></script>
 
 </head>
 <body>
 <div id="board_write_title" >게시판 글수정</div>
 <br><br>
-	<form action="updateProcess.jsp?page=${param.page }" method="post" enctype="multipart/form-data">
+	<form action="updateProcess.jsp?page=${param.page }" method="post" enctype="multipart/form-data" class="writeForm">
 		<div id="form_wrapper">
 			<ul>
 			
@@ -31,15 +33,15 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 
 				<li>
 				<label>제목</label>
-				<input id="title" name="title" size="" value="${board.title}"/></li>
+				<input id="title" name="title" size="" value="${board.title}" class="writeForm"/></li>
 				
 				<li>
 				<label for="content">내용</label>
-				<textarea name="content" id="content">${board.content}</textarea></li>
+				<textarea name="content" id="content" class="writeForm">${board.content} </textarea></li>
 				
 				<li>
 				<label for="writer">글쓴이</label>
-				<input name="writer" id="writer"  value="${board.writer}" readonly="readonly"/></li>
+				<input name="writer" id="writer"  value="${board.writer}" readonly="readonly" class="writeForm"/></li>
 				
 				<li>
 				<label for="file">첨부파일명</label>
