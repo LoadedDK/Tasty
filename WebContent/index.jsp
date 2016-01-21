@@ -52,7 +52,7 @@
 			</c:otherwise>
 		</c:choose>
 	
-		<img id="login_img" src="../img/login2.png">
+		<img id="login_img" src="../img/login.png">
 		</a>
 	</div>
 </div>
