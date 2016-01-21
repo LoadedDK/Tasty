@@ -3,7 +3,7 @@
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -35,21 +35,23 @@
 				<div id="articleWdate">${board.wdate}</div>
 				<div id="articleWriter">${board.writer}</div>	
 				<div id="articleContent">${board.content}</div>	<br>
-				<div id="articleImage"> 
-					<c:if test="${!empty board.fileName }">
-						<img src="../img/board/${board.fileName }" />
-					</c:if>
-				</div>	
-	
-			
+				
+			<div id="articleImage"> 
+				<c:if test="${!empty board.fileName }">
+					<img src="../img/board/${board.fileName }" />
+				</c:if>
 			</div>
-	
+			</div>
+				
 			<br>
 			
 			<div id="btn_wrapper">
 				<a class="view_btn" href="list.jsp?page=${param.page}">글목록</a>
-				<a class="view_btn" href="update.jsp?no=${board.no }&page=${param.page}">글수정</a>
-				<a class="view_btn" id="delete_btn" href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
+				<c:if test="${board.writer eq name}">
+					<a class="view_btn" id="update_btn" href="update.jsp?no=${board.no }&page=${param.page}">글수정</a>
+					<a class="view_btn" id="delete_btn" href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
+				</c:if>
+				
 			</div>
 		</div>
 

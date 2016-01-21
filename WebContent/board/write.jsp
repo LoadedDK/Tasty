@@ -2,6 +2,7 @@
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -29,8 +30,16 @@
 				<textarea name="content" id="content" class="writeForm"></textarea></li>
 				
 				<li>
-				<label for="writer">글쓴이</label>
-				<input name="writer" id="writer" class="writeForm" value="${name }" readonly="readonly"/></li>
+					<c:if test="${!empty name }">
+					<label for="writer">글쓴이</label>
+					<input name="writer" id="writer" class="writeForm" value="${name }" readonly="readonly"/>
+					</c:if>				
+					
+					<c:if test="${empty name }">
+					<label for="writer">글쓴이</label>
+					<input name="writer" id="writer" class="writeForm" />
+					</c:if>				
+				</li>
 				
 				<li>
 				<label for="file">첨부파일</label>
