@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+h2{
+	font-family: 'Hanna', sans-serif;
+	color: rgb(0, 100, 102);
+}
+
+#form_wrapper{
+	width: 600px;
+	height: auto;
+	margin: auto;
+	
+}
+
+#form_wrapper ul{
+	list-style: none;
+	
+}
+
+#form_wrapper ul li {
+	list-style: none;
+	margin: 10px 0;
+}
+
+#form_wrapper ul li label{
+	width: 100px;	
+	float: left;
+	color: rgb(0,205,205);
+	font-weight: bold;
+}
+
+#form_wrapper input {
+	width: 360px;
+	height: 20px;
+}
+
+#form_wrapper textarea {
+	width: 360px;
+	height: 80px;
+}
+
+#form_wrapper button{
+	border: 1px solid;
+	width: 80px;
+	height: 25px;
+	text-align: center;
+	background: rgb(0, 176, 179);
+	color: rgb(204, 254, 255);
+	cursor: pointer;
+}

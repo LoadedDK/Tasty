@@ -11,16 +11,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>QnA - [${qna.title}] 수정하기</title>
+<link rel="stylesheet" type="text/css" href="../css/qna/update.css">
 </head>
 <body>
 <form action="updateProcess.jsp?page=${param.page}" method="post">
-<h2>게시판 글수정</h2>
-번호 : <input name="no" value="${qna.no}" readonly="readonly"><br/>
-제목 : <input name="title" value="${qna.title}"><br/>
-내용 : <textarea rows="5" cols="40" name="content">${qna.content}</textarea><br/>
-작성자 : <input name="writer" value="${qna.writer}"><br/>
+<h2>수정하기</h2>
+<div id="form_wrapper">
+<ul>
+<li><label>번호</label><input name="no" value="${qna.no}" readonly="readonly"></li>
+<li><label>제목</label><input name="title" value="${qna.title}"></li>
+<li><label>내용</label><textarea rows="5" cols="40" name="content">${qna.content}</textarea></li>
+<li><label>작성자</label><input name="writer" value="${qna.writer}"></li>
+</ul>
 <button>글수정</button>
+</div>
 </form>
 </body>
 </html>

@@ -60,7 +60,7 @@ taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 [<a href="list.jsp?page=${jspData.totalPage>jspData.endPage?jspData.page+1:jspData.totalPage}">&gt;</a>] 
 [<a href="list.jsp?page=${jspData.totalPage>jspData.endPage?jspData.endPage+1:jspData.totalPage}">&gt;&gt;</a>] 
 [<a href="list.jsp?page=${jspData.totalPage}">끝</a>]
-</div><br/>
+</div>
 </div>
 </body>
 </html>

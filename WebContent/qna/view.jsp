@@ -6,15 +6,6 @@
 <%
 	// 넘어오는 글번호를 받자
 	String noStr = request.getParameter("no");
-%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<%
 if(noStr != null) {
 	// boardViewService 생성 후 호출
 	ServiceInterface service = new QnaViewService();
@@ -22,13 +13,24 @@ if(noStr != null) {
 	// EL 객체를 사용하기 위해 request 객체에 board를 담는다.
 	request.setAttribute("board", qna);
 %>
-<h2>질문답변 보기</h2>
-번호 : ${board.no}<br/>
-제목 : ${board.title}<br/>
-내용 : ${board.content}<br/>
-작성자 : ${board.writer}<br/>
-작성일 : ${board.wdate}<br/>
-조회수 : ${board.hit}<br/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>QnA - [${board.title}]</title>
+<link rel="stylesheet" type="text/css" href="../css/qna/view.css">
+</head>
+<body>
+<h2>QnA 보기</h2>
+<div id="form_wrapper">
+<table>
+<tr><th>번호</th><td>${board.no}</td></tr>
+<tr><th>제목</th><td>${board.title}</td></tr>
+<tr><th>내용</th><td>${board.content}</td></tr>
+<tr><th>작성자</th><td>${board.writer}</td></tr>
+<tr><th>작성일</th><td>${board.wdate}</td></tr>
+<tr><th>조회수</th><td>${board.hit}</td></tr>
+</table>
 <button onclick="location='list.jsp?page=${param.page}'">글리스트</button>
 <button onclick="location='update.jsp?no=${board.no}&page=${param.page}'">글수정</button>
 <button onclick="location='deleteProcess.jsp?no=${board.no}'">글삭제</button>
@@ -42,5 +44,6 @@ if(noStr != null) {
 <%
 	}
 %>
+</div>
 </body>
 </html>
