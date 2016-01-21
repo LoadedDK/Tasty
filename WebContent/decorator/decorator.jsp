@@ -30,7 +30,7 @@
 		<decorator:body />
 	</div>
 	<footer>
-		ⓒ 
+		ⓒ Copyright 2016 Today's Restaurant
 	</footer>
 </div>
 </body>

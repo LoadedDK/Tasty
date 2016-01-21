@@ -1,16 +1,25 @@
 @CHARSET "UTF-8";
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-body a {
-	color: rgb(0,205,205);
-	text-decoration: none;
+#content {
+	width: 800px;
+	margin: 0 auto;
+	background: white;
 }
 
-body a:visited {
-	color: rgb(0,205,205);
-	text-decoration: none;
+#memberTable {
+	margin: 0 auto;
+	border: 1px solid #c8c8c8;
+	border-collapse: collapse;
 }
+
+	#memberTable th {
+		color: #00cdcd;
+	}
+
+	#memberTable th,td {
+		padding: 6px 12px;
+		border: 1px solid #c8c8c8;
+	}
 
 #cpage {
 	background: #00cdcd;
@@ -23,4 +32,9 @@ body a:visited {
 	color: #00cdcd;
 	padding: 6px 12px;
 	font-weight: bolder;
+	text-decoration: none;
+}
+
+#content a:visited {
+	text-decoration: none;
 }

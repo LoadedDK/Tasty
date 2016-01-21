@@ -28,7 +28,7 @@
 <div id="content">
 <h2>회원 리스트</h2>
 
-	<table>
+	<table id="memberTable">
 		<tr>
 			<th>아이디</th>
 			<th>이름</th>
@@ -39,7 +39,7 @@
 		<c:forEach var="member" items="${list }">
 		<tr>
 			<td>${member.id }</td>
-			<td><a href="view.jsp?id=${member.id }">${member.name }</a></td> 
+			<td>${member.name }</td> 
 			<td>${member.birth }</td>
 			<td>${member.tel }</td>
 			<td>${member.email }</td>

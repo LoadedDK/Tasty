@@ -1,11 +1,13 @@
 @CHARSET "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 html, body{
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
 	background: #F7F5F0;
+	font-family: "Nanum Gothic", sans-serif;
 }
 
 header {
@@ -46,7 +48,6 @@ header {
 		color: white;
 		text-decoration: none;
 		margin: 0 5px;
-		font-family: "Nanum Gothic", sans-serif;
 		font-size: 12pt;
 		font-weight: bolder;
 	}
@@ -72,4 +73,5 @@ footer {
 	margin-top: 10px;
 	width: 100%;
 	height: 30px;
+	font-weight: bold;
 }
