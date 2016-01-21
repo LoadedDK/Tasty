@@ -8,9 +8,8 @@
 <%request.setCharacterEncoding("utf-8"); %>
 <%
 	String uploadPath=request.getServletContext().getRealPath("upload");
- 
+// 	System.out.println("path: " + uploadPath); //업로드파일 저장위치 확인
 	int size=100*1024*1024;
- 
 	MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
 	
 	Notice notice = new Notice();

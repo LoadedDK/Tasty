@@ -20,11 +20,13 @@
 	border-bottom: 2px solid white;
 	padding: 20px 0 20px 0;
 }
-
 #list_content {
 	text-align: left;	
 }
 
+.list_content {
+	float: left;
+}
 .list_img {
 	float: right;
 	height: 150px;

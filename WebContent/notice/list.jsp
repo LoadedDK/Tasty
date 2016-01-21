@@ -24,7 +24,8 @@
 	NoticeModel model = (NoticeModel) service.service(pp);
 	request.setAttribute("list", model.getList());
 	request.setAttribute("jspData", model.getJspData());
-	request.setAttribute("pri", pri);
+	request.setAttribute("pri", pri );
+// 	response.sendRedirect("list.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -51,12 +52,16 @@
 				<li>
 					<div class="list_content">
 						<div id="list_title"><a href="view.jsp?no=${notice.no}&page=${jspData.page}"
-						>${notice.title }</a></div><br><br>
+						>${notice.title }</a>
+						</div><br><br>
 						<div id="list_content" class="textOver">${notice.content}</div><br>
 						<div id="list_startDate">공지기간  :  ${notice.wdate} ~ ${notice.endDate }</div><br>
 					</div>	
+					
 					<div class="list_img">
-						<img src="../img/notice/${notice.fileName }">
+						<c:if test="${!empty notice.fileName }">
+							<img src="../img/notice/${notice.fileName }" />
+						</c:if>
 					</div>
 				</li>
 			</c:forEach>
