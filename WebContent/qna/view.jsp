@@ -13,11 +13,7 @@ if(noStr != null) {
 	// EL 객체를 사용하기 위해 request 객체에 board를 담는다.
 	request.setAttribute("board", qna);
 	
-	String content = qna.getContent();
-	content.replace("\r\n", "<br>");
-	content.replace("\r", "<br>");
-	content.replace("\n", "<br>");
-	qna.setContent(content);
+	qna.setContent(qna.getContent().replace("\r\n", "<br>"));
 %>
 <!DOCTYPE html>
 <html>
