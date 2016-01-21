@@ -34,22 +34,29 @@
 		<div id="content">
 			<div id="list_head">맛집 이야기</div>
 			<div id="btn_wrapper">
-			<a id="write_btn" href="write.jsp">글쓰기</a>
-			</div><br>
-		
+				<a id="write_btn" href="write.jsp">글쓰기</a>
+			</div>
+			<br>
+
 			<ul>
 				<c:forEach var="board" items="${list }">
 					<li>
 						<div class="list_content">
-							<div id="list_title"><a href="view.jsp?no=${board.no}&page=${jspData.page}" 
-							 >${board.title }</a></div><br><br>
-							<div id="list_content" class="textOver">${board.content}</div><br>
+							<div id="list_title">
+								<a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }</a>
+							</div>
+							<br> <br>
+							<div id="list_content" class="textOver">${board.content}</div>
+							<br>
 							<div id="list_wdate">${board.wdate}</div>
 						</div>
-						
+
 						<div class="list_img">
-							<img src="../img/${board.fileName }">
+							<c:if test="${!empty board.fileName }">
+								<img src="../img/${board.fileName }" />
+							</c:if>
 						</div>
+
 					</li>
 				</c:forEach>
 			</ul>
@@ -72,9 +79,6 @@
 				href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage + 1 : jspData.totalPage }">&gt;&gt;</a>]
 			[<a href="list.jsp?page=${jspData.totalPage }">끝</a>]
 		</div>
-		<br>
-	
-		
 	</section>
 </body>
 </html>

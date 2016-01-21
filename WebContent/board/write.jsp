@@ -12,7 +12,7 @@
 	href="../css/board/board_write.css">
 </head>
 <body>
-	<h2>자유 게시판 글쓰기</h2>
+	<div id="board_write_title">자유 게시판 글쓰기</div>
 	<br><br>
 	<form action="writeProcess.jsp" method="post" enctype="multipart/form-data">
 		<div id="form_wrapper">
@@ -35,7 +35,7 @@
 				<input type="file" name="fileName" id="file"></li>
 				
 			</ul>
-			<button>작성</button>
+			<button id="board_write_btn">작성</button>
 			<br>
 		</div>
 	</form>

@@ -19,7 +19,7 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 
 </head>
 <body>
-<h2>자유 게시판 글수정</h2>
+<div id="board_write_title" >게시판 글수정</div>
 <br><br>
 	<form action="updateProcess.jsp?page=${param.page }" method="post" enctype="multipart/form-data">
 		<div id="form_wrapper">

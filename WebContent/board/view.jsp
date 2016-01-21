@@ -2,6 +2,7 @@
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -29,7 +30,11 @@
 				<div id="articleWdate">${board.wdate}</div>
 				<div id="articleWriter">${board.writer}</div>	
 				<div id="articleContent">${board.content}</div>	<br>
-				<div id="articleImage"><img src="../img/${board.fileName}"> </div>	
+				<div id="articleImage"> 
+					<c:if test="${!empty board.fileName }">
+						<img src="../img/${board.fileName }" />
+					</c:if>
+				</div>	
 	
 			
 			</div>
