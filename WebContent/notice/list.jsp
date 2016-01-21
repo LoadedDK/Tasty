@@ -8,11 +8,13 @@
 <%
 	int cpage=1;
     String pageStr=request.getParameter("page");
-    if(pageStr!=null)
+    if(pageStr != "" && pageStr != null)
     	cpage=Integer.parseInt(pageStr);
 	
 	// 공지 시점 지정하는 변수 period로 전달 받기
 	String pri = request.getParameter("pri");
+
+	
 	if(pri==null) pri="cur"; //기본적으로 현재 공지를 보여주도록 설정.
 	
 	Pp pp= new Pp();
@@ -25,7 +27,7 @@
 	request.setAttribute("list", model.getList());
 	request.setAttribute("jspData", model.getJspData());
 	request.setAttribute("pri", pri );
-// 	response.sendRedirect("list.jsp");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -60,7 +62,7 @@
 					
 					<div class="list_img">
 						<c:if test="${!empty notice.fileName }">
-							<img src="../img/notice/${notice.fileName }" />
+							<a href="view.jsp?no=${notice.no }"><img src="../img/notice/${notice.fileName }" /></a>
 						</c:if>
 					</div>
 				</li>
@@ -84,10 +86,7 @@
 			<a href="list.jsp?pri=${pri}&page=${jspData.totalPage }">끝</a>
 		</div>
 		<br> <br>
-<!-- 		<div id="list_btn"> -->
-<!-- 			<button onclick="location='write.jsp'">글쓰기</button> -->
-<!-- 			<button onclick="location='../index.jsp'">돌아가기</button> -->
-<!-- 		</div> -->
+
 	</section>
 </body>
 </html>

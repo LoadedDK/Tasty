@@ -54,7 +54,7 @@
 
 						<div class="list_img">
 							<c:if test="${!empty board.fileName }">
-								<img src="../img/board/${board.fileName }" />
+								<a href="view.jsp?no=${board.no }"><img src="../img/board/${board.fileName }" /></a>
 							</c:if>
 						</div>
 

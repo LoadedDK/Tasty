@@ -28,6 +28,7 @@
 		notice.setContent(notice.getContent().replace("\r\n", "<br>"));
 
 		request.setAttribute("notice", notice);
+	 	
 	%>
 	<div id="articleMain">
 		<div id="articleTop">
