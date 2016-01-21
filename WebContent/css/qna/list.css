@@ -82,10 +82,6 @@
 	text-overflow: ellipsis;
 }
 
-#pageBtn{
-	margin-top: 10px;
-}
-
 #btn_wrapper {
 	float: right;
 	width: 200px;
@@ -110,4 +106,26 @@
 
 #writebtn:HOVER {
 	background: rgb(0,205,205);
+}
+
+#pageDiv{
+	margin-top: 20px;
+}
+
+#pageDiv a {
+	color: #00cdcd;
+	padding: 6px 12px;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+#pageDiv a:VISITED {
+	text-decoration: none;
+}
+
+#cpage {
+	background: #00cdcd;
+	color: white;
+	padding: 6px 12px;
+	font-weight: bolder;
 }
