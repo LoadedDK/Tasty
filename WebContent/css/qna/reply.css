@@ -9,7 +9,9 @@ h2{
 	width: 600px;
 	height: auto;
 	margin: auto;
-	
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background: white;
 }
 
 #form_wrapper ul{
