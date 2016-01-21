@@ -12,6 +12,12 @@ if(noStr != null) {
 	Qna qna = (Qna)service.service(Integer.parseInt(noStr));
 	// EL 객체를 사용하기 위해 request 객체에 board를 담는다.
 	request.setAttribute("board", qna);
+	
+	String content = qna.getContent();
+	content.replace("\r\n", "<br>");
+	content.replace("\r", "<br>");
+	content.replace("\n", "<br>");
+	qna.setContent(content);
 %>
 <!DOCTYPE html>
 <html>
