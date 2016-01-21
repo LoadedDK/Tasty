@@ -21,9 +21,13 @@
 	board.setTitle(multi.getParameter("title"));
 	board.setContent(multi.getParameter("content"));
 	board.setWriter(multi.getParameter("writer"));
-	board.setFileName(multi.getFilesystemName("fileName"));
+	
+	if(multi.getFilesystemName("fileName") == null || multi.getParameter("orgFileName") == multi.getFilesystemName("fileName"))
+		board.setFileName(multi.getParameter("orgFileName"));
+	else
+		board.setFileName(multi.getFilesystemName("fileName"));
 	
 	ServiceInterface service = new BoardUpdateService();
 	service.service(board);
-	response.sendRedirect("view.jsp?no="+board.getNo());
+	response.sendRedirect("view.jsp?no="+board.getNo()+"&page=" + multi.getParameter("page"));
  %>

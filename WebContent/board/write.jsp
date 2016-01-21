@@ -24,7 +24,7 @@
 				
 				<li>
 				<label for="content">내용</label>
-				<textarea name="content" id="content"> </textarea></li>
+				<textarea name="content" id="content"></textarea></li>
 				
 				<li>
 				<label for="writer">글쓴이</label>

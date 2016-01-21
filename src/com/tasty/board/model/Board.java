@@ -5,7 +5,6 @@ public class Board {
 	private String title,content,writer,wdate;
 	private int hit;
 	private String fileName;
-	
 	public Board() {}
 	
 	public Board(int no, String title, String writer, String wdate, int hit, String fileName) {

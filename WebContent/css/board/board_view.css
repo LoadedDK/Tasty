@@ -1,40 +1,54 @@
 @CHARSET "UTF-8";
 
-#articlecTitle {
+#articleMain{
+	background: white;
+	margin: 0 120px;
+	padding: 20px;
+	
+}
+#articleTitle {
 	padding: 15px 0 15px 0;
-	float: left;
+	color: rgb(0,205,205);
+	font-size: 18pt;
+	font-weight: bolder;
+	
 }
 
 #articleWdate {
 	padding: 5px 0 3px 0;
+	text-align: right;	
+
 }
 
 #articleWriter {
 	padding: 3px 0 15px 0;
+	text-align: right;	
+	font-weight: bold;
+	
 }
 
 #articleContent {
 	padding: 15px 0 15px 0;
+	text-indent: 20px;
+	clear: both;
+
 }
 
-#articleImg {
-	
-}
 
 img {
 	width: 300px;
 }
 
-a {
+.view_btn{
 	text-decoration: none;
-	color: black;
+	color: white;
 	width: 70px;
 }
-.view_btn a:VISITED{
-	color: black;
+.view_btn:VISITED{
+	color: white;
 }
-.view_btn a:HOVER{
-	background: white;
+.view_btn:HOVER{
+	background: rgb(0,205,205);
 }
 
 #btn_wrapper{
@@ -46,6 +60,7 @@ a {
 .view_btn{
 	padding: 5px 15px;
 	margin-left: 10px;
-	background: rgb(0,205,205);
+	background: #959595;
 	text-align: center;
+	font-weight: bolder;
 }

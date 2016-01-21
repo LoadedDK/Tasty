@@ -32,8 +32,7 @@
 <body>
 	<section>
 		<div id="content">
-			<div id="list_head"> <h2>맛집 이야기</h2>
-			</div>
+			<div id="list_head">맛집 이야기</div>
 			<div id="btn_wrapper">
 			<a id="write_btn" href="write.jsp">글쓰기</a>
 			</div><br>
@@ -42,9 +41,10 @@
 				<c:forEach var="board" items="${list }">
 					<li>
 						<div class="list_content">
-							<a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }</a><br>
-							${board.content}<br>
-							${board.wdate}
+							<div id="list_title"><a href="view.jsp?no=${board.no}&page=${jspData.page}" 
+							 >${board.title }</a></div><br><br>
+							<div id="list_content" class="textOver">${board.content}</div><br>
+							<div id="list_wdate">${board.wdate}</div>
 						</div>
 						
 						<div class="list_img">

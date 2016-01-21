@@ -12,6 +12,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/board/board_view.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/board/board_view.js"></script>
 </head>
 <body>
 	<%
@@ -21,13 +23,12 @@
 			request.setAttribute("board", service.service(Integer.parseInt(noStr)));
 	%>
 
-	<section>
 		<div id="articleMain">
 			<div id="articleTop">
-				<div id="articleTitle"><h3>${board.title }</h3> </div>	
-				<div id="articleWdate">${board.wdate}</div>	
+				<div id="articleTitle">${board.title }</div>	
+				<div id="articleWdate">${board.wdate}</div>
 				<div id="articleWriter">${board.writer}</div>	
-				<div id="articleContent">${board.content}</div>	
+				<div id="articleContent">${board.content}</div>	<br>
 				<div id="articleImage"><img src="../img/${board.fileName}"> </div>	
 	
 			
@@ -36,12 +37,11 @@
 			<br>
 			
 			<div id="btn_wrapper">
-				<a class="view_btn" href="list.jsp">글목록</a>
+				<a class="view_btn" href="list.jsp?page=${param.page}">글목록</a>
 				<a class="view_btn" href="update.jsp?no=${board.no }&page=${param.page}">글수정</a>
-				<a class="view_btn" href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
+				<a class="view_btn" id="delete_btn" href="deleteProcess.jsp?no=${board.no }&page=${param.page}">글삭제</a>
 			</div>
 		</div>
-	</section>
 
 	<%
 		} // 글번호가 넘어온 경우 처리

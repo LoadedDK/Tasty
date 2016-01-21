@@ -21,7 +21,7 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 <body>
 <h2>자유 게시판 글수정</h2>
 <br><br>
-	<form action="updateProcess.jsp" method="post" enctype="multipart/form-data">
+	<form action="updateProcess.jsp?page=${param.page }" method="post" enctype="multipart/form-data">
 		<div id="form_wrapper">
 			<ul>
 			
@@ -43,7 +43,9 @@ request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 				
 				<li>
 				<label for="file">첨부파일명</label>
-				<span id="update_file">${board.fileName}</span></li>
+				<span id="update_file">${board.fileName}</span>
+				<input type="hidden" name="orgFileName" value="${board.fileName}" >
+				</li>
 				
 				<li>
 				<label for="file">첨부파일</label>
