@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 #content {
-	width: 300px;
+	width: 260px;
 	margin: 0 auto;
 	padding: 0 50px;
 }
@@ -18,7 +18,7 @@
 }
 
 #content ul li label {
-	width: 120px;
+	width: 80px;
 	float: left;
 }
 

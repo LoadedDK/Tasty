@@ -9,7 +9,7 @@
     String pageStr=request.getParameter("page");
     if(pageStr!=null)
     	cpage=Integer.parseInt(pageStr);
-	// NoticeListService 객체 생성 후 호출
+    
 	ServiceInterface service = new MainNoticeListService();
 	request.setAttribute("list", service.service(null));
 	
@@ -38,33 +38,37 @@
 	</div>
 	
 	<div id="login_div">
-		<% if(session.getAttribute("id") != null) { %>
-			<a href="../member/logoutProcess.jsp">
-			<span id="logout"><%=session.getAttribute("name") %></span>
-		<% } else { %>
-			<a href="../member/login.jsp">
-			<span id="login">로그인</span>
-		<% } %>
-		
+	
+		<c:choose>
+			<c:when test="${!empty name }">
+				<a href="../member/logoutProcess.jsp">
+				<span id="logout">${name }</span>
+			</c:when>
+			<c:otherwise>
+				<a href="../member/login.jsp">
+				<span id="login">로그인</span>
+			</c:otherwise>
+		</c:choose>
+	
 		<img id="login_img" src="../img/login2.png">
 		</a>
 	</div>
 </div>
 
+<c:set var="i" value="0" />
 
 <div id="content">
 	
 	<span id="logo">오늘의 맛집</span>
 	
 	<div id="notice_list">
-			<!-- 맛집 리스트 작성 -->
-			<div id="notice_list_inner">
-				<table>
-				<c:forEach var="notice" items="${list }">
-					<tr><td><a href="../notice/view.jsp?no=${notice.no }"><%=i++ %>. ${notice.title }</a></td></tr>
-				</c:forEach>
-				</table>
-			</div>
+		<div id="notice_list_inner">
+			<table>
+			<c:forEach var="notice" items="${list }">
+				<tr><td><a href="../notice/view.jsp?no=${notice.no }">${i=i+1 }. ${notice.title }</a></td></tr>
+			</c:forEach>
+			</table>
+		</div>
 	</div>
 </div>
 
