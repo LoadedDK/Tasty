@@ -51,11 +51,7 @@
 	background: #959595;
 }
 
- #pageMove a:VISITED {
-	color: black;
-	font-weight: bold;
-	text-decoration: none;
-}
+
 
 #write_btn:HOVER {
 	background: rgb(0,205,205);
@@ -64,6 +60,22 @@
 
 #pageMove a {
 	text-decoration: none;
+	color: #00cdcd;
+	padding: 6px 12px;
+	font-weight: bolder;
+}
+
+#pageMove a:VISITED {
+	color: #00cdcd;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+#cpage {
+	background: #00cdcd;
+	color: white;
+	padding: 6px 12px;
+	font-weight: bolder;
 }
 
 #list_title{

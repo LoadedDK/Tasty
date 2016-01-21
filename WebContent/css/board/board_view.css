@@ -28,11 +28,11 @@
 
 #articleContent {
 	padding: 15px 0 15px 0;
-	text-indent: 20px;
 	clear: both;
 	border-top : 1px solid #c8c8c8;
 	border-bottom : 1px solid #c8c8c8;
 	padding-bottom: 80px; 
+	text-align: left;
 }
 
 
