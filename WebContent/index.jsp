@@ -20,8 +20,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>오늘의 맛집</title>
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+<link rel="icon" type="image/x-icon" href="../favicon.png">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
+<title>오늘의 맛집</title>
 <script src="../js/main.js"></script>
 </head>
 <body>

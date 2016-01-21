@@ -25,6 +25,7 @@
 </head>
 <body>
 
+<div id="content">
 <h2>회원 리스트</h2>
 
 	<table>
@@ -48,21 +49,30 @@
 	</table>
 	<br>
 
-	[<a href="list.jsp?page=1">처음</a>] 
-	[<a href="list.jsp?page=${jspData.startPage > 1 ? jspData.startPage-jspData.pagesPerGroup : 1 }"><span class="fa fa-chevron-left"></span><span class="fa fa-chevron-left"></span></a>] 
-	[<a href="list.jsp?page=${jspData.page > 1 ? jspData.page-1 : 1 }"><span class="fa fa-chevron-left"></span></a>] 
+	<a href="list.jsp?page=1"><span class="fa fa-step-backward"></span></a>
+	<a href="list.jsp?page=${jspData.startPage > 1 ? jspData.startPage-jspData.pagesPerGroup : 1 }"><span class="fa fa-chevron-left"></span><span class="fa fa-chevron-left"></span></a>
+	<a href="list.jsp?page=${jspData.page > 1 ? jspData.page-1 : 1 }"><span class="fa fa-chevron-left"></span></a>
 
 	<c:forEach var="i" begin="${jspData.startPage }" end="${jspData.endPage }">
-	[<a href="list.jsp?page=${i }">${i }</a>] 
+		<c:choose>
+			<c:when test="${jspData.page eq i }">
+				<span id="cpage">${i }</span>
+			</c:when>
+			<c:otherwise>
+				<a href="list.jsp?page=${i }">${i }</a>
+			</c:otherwise>
+		</c:choose>
 	</c:forEach>
 
-	[<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.page+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span></a>] 
-	[<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span><span class="fa fa-chevron-right"></span></a>] 
-	[<a href="list.jsp?page=${jspData.totalPage }">끝</a>]
+	<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.page+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span></a>
+	<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span><span class="fa fa-chevron-right"></span></a>
+	<a href="list.jsp?page=${jspData.totalPage }"><span class="fa fa-step-forward"></span></a>
 
 	<br><br>
 
 	<button onclick="location='write.jsp'">회원가입</button>
+
+</div>
 
 </body>
 </html>

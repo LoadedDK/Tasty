@@ -6,8 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+<link rel="icon" type="image/x-icon" href="../favicon.png">
 <link rel="stylesheet" type="text/css" href="../decorator/decorator.css">
-<title>[오늘의 맛집] <decorator:title /></title>
+<title>오늘의 맛집 - <decorator:title /></title>
 <decorator:head />
 </head>
 <body>
@@ -28,7 +30,7 @@
 		<decorator:body />
 	</div>
 	<footer>
-		footer
+		ⓒ
 	</footer>
 </div>
 </body>

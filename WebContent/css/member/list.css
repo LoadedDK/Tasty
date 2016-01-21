@@ -11,3 +11,16 @@ body a:visited {
 	color: rgb(0,205,205);
 	text-decoration: none;
 }
+
+#cpage {
+	background: #00cdcd;
+	color: white;
+	padding: 6px 12px;
+	font-weight: bolder;
+}
+
+#content a {
+	color: #00cdcd;
+	padding: 6px 12px;
+	font-weight: bolder;
+}
