@@ -44,7 +44,24 @@
 	text-align: right;
 }
 
-#write_btn {
+#notice_list_pbtn button{
+	text-decoration: none;
+	text-align: center;
+	padding: 6px 15px;
+	color: white;
+	font-weight: bolder;
+	background: #959595;
+	border: none;
+	margin-left: 10px;	
+	font-size: 12pt;
+}
+
+#notice_list_pbtn button:HOVER {
+	background: rgb(0,205,205);
+	
+}
+
+#write_btn{
 	text-decoration: none;
 	text-align: center;
 	padding: 5px 15px;
@@ -93,15 +110,18 @@
 	width: 100%;
 	text-align: right;
 }
-
-
+#list_title a:HOVER{
+	background: rgb(0, 205, 205);
+	color: white;
+	
+}
 #list_content {
 	text-indent: 2%;
 	line-height: 20pt;
 
 }
 
-#list_wdate {
+#list_startDate {
 	text-align: right;
 	color: #959595;
 }

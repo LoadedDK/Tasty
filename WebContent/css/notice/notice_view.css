@@ -16,7 +16,15 @@
 
 #articleWdate {
 	padding: 5px 0 3px 0;
-	text-align: right;	
+	text-align: right;
+	color: #959595;	
+
+}
+#articleWdate b{
+	font-size: 15pt;
+	color: #959595;
+	padding: 0 10px 0 0;
+	font-weight: bolder;
 
 }
 
@@ -36,6 +44,10 @@
 	line-height: 20pt;
 }
 
+#articleImage{
+	margin: 10px;
+	
+}
 
 img {
 	width: 300px;

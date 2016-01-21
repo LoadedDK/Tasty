@@ -33,8 +33,8 @@
 	<div id="articleMain">
 		<div id="articleTop">
 			<div id="articleTitle">${notice.title }</div>
+			<div id="articleWdate"><b>공지날짜</b> ${notice.startDate} ~ ${notice.endDate}</div>
 			<div id="articleContent">${notice.content}</div>
-			<div id="articleWdate">${notice.startDate} ~ ${notice.endDate}</div>
 			<div id="articleImage">
 				<c:if test="${!empty notice.fileName }">
 

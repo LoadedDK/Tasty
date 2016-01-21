@@ -43,12 +43,12 @@
 			<div id="btn_wrapper">
 			<a id="write_btn" href="write.jsp">글쓰기</a>
 			</div><br>
-			
+			<div id="notice_list_pbtn">
 			<button onclick="location='list.jsp?pri=cur'">현재공지</button>
 			<button onclick="location='list.jsp?pri=old'">지난공지</button>
 			<button onclick="location='list.jsp?pri=res'">미래공지</button>
 			<button onclick="location='list.jsp?pri=all'">모든공지</button>
-
+			</div>
 			<ul>
 			<c:forEach var="notice" items="${list }">
 				<li>
