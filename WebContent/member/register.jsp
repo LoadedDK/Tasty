@@ -5,6 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/member/register.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="../js/member/register.js"></script>
 </head>
 <body>
 
@@ -32,7 +34,7 @@
 		</li>
 		<li><label>이메일</label><input type="email" name="email" id="email" /></li>
 	</ul>
-	<button type="submit">작성</button>
+	<a id="registerBtn">회원가입</a>
 
 </form>
 

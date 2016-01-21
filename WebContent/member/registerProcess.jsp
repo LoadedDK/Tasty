@@ -10,6 +10,11 @@
 </script>
 <%
 	ServiceInterface service = new MemberWriteService();
+
+	String tel1 = request.getParameter("tel1");
+	String tel2 = request.getParameter("tel2");
+	String tel3 = request.getParameter("tel3");
+	member.setTel(tel1 + "-" + tel2 + "-" + tel3);
 	service.service(member);
 %>
 
