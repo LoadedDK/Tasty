@@ -30,7 +30,7 @@
 		<decorator:body />
 	</div>
 	<footer>
-		ⓒ
+		ⓒ 
 	</footer>
 </div>
 </body>
