@@ -11,6 +11,8 @@ h2{
 	margin: auto;
 	padding: 20px;
 	background: white;
+	font-family: "Nanum Gothic", sans-serif;
+	color: #003d3e0100102;
 }
 
 #form_wrapper table{
