@@ -12,7 +12,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/board/board_view.css">
+<link rel="stylesheet" type="text/css" href="../css/notice/notice_view.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/notice/notice_view.js"></script>
 </head>
 <body>
 	<%
@@ -20,25 +22,25 @@
 		if(no!=null){
 		ServiceInterface service = new NoticeViewService();
 		request.setAttribute("notice", service.service(no));
-		System.out.println(no);
 	%>
-	<section>
-			<div id="articleTop">
-				<div id="articleTitle"><h3>${notice.title }</h3> </div>	
-				<div id="articleWdate">${notice.wdate}</div>	
-				<div id="articleContent">${notice.content}</div>	
-				<div id="articleImage"><img src="../img/${notice.fileName }"></div>	
-			</div>
-			<br>
-			<div>
-				<ul>
-					<li><a href="list.jsp">글리스트</a></li>
-					<li><a href="update.jsp?no=${notice.no }">글수정</a></li>
-					<li><a href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a></li>
-				</ul>	
-			</div>
-	</section>
-<!-- 	<h2>공지사항 글보기</h2> -->
+	<div id="articleMain">
+		<div id="articleTop">
+			<div id="articleTitle">${notice.title }</div>
+			<div id="articleContent">${notice.content}</div>
+			<div id="articleWdate">${notice.startDate} ~ ${notice.endDate}</div>
+			<div id="articleImage"><img src="../img/${notice.fileName }"></div>
+		</div>
+		<br>
+		<div>
+			<ul>
+				<li><a href="list.jsp">글리스트</a></li>
+				<li><a href="update.jsp?no=${notice.no }">글수정</a></li>
+				<li><a
+					href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 	<h2>공지사항 글보기</h2> -->
 <!-- 	<table> -->
 <!-- 		<tr> -->
 <!-- 			<th>글번호</th> -->

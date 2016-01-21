@@ -15,7 +15,16 @@ public class Notice {
 		this.no = no;
 		this.title = title;
 	}
-	
+
+	public Notice(int no, String title,String content, String wdate, String startDate, String endDate,String fileName) {
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.wdate = wdate;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.fileName = fileName;
+	}
 	public Notice(int no, String title, String wdate, String startDate, String endDate,String fileName) {
 		this.no = no;
 		this.title = title;

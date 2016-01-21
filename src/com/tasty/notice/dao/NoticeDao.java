@@ -32,7 +32,7 @@ public class NoticeDao {
 			// 2. 연결
 			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			// 3. sql문장 작성
-			String sql = " select no,title, " + " to_char(wdate,'yyyy-mm-dd')wdate, "
+			String sql = " select no,title,content, " + " to_char(wdate,'yyyy-mm-dd')wdate, "
 					+ " to_char(startdate,'yyyy-mm-dd')startDate, " + " to_char(enddate,'yyyy-mm-dd')endDate, "
 					+ " fileName from notice ";
 			// 공지 일정에 따른 where 추가
@@ -52,10 +52,10 @@ public class NoticeDao {
 			sql += " order by no desc ";
 			
 			// 3-2) rownum 붙이기
-			sql = "select rownum rnum, no, title, wdate, startDate, endDate, fileName  "
+			sql = "select rownum rnum, no, title,content, wdate, startDate, endDate, fileName  "
 					+ " from (" + sql + ")";
 			// 3-3) 시작 글과 끝글의 번호 사이에 데이터 가져오기 (where 사용)
-			sql = "select no, title, wdate, startDate, endDate, fileName from (" + sql + ") "
+			sql = "select no, title,content, wdate, startDate, endDate, fileName from (" + sql + ") "
 					+ "where rnum between ? and ?";
 
 			// 4. 실행할 수 있는상태 - 데이터 셋팅( ? 가 있어야 데이터 세팅이 가능하다.)
@@ -74,8 +74,10 @@ public class NoticeDao {
 			// rs는 데이터 마지막 그 위에 있다. 즉, rs는 아무런 데이터도 가지고 있지 않은 상태이다.
 			while (rs.next()) {
 				// next()해서 데이터를 찾는다. 있으면 true 없으면 false
-				list.add(new Notice(rs.getInt("no"), rs.getString("title"), rs.getString("wdate"),
-						rs.getString("startDate"), rs.getString("endDate"), rs.getString("fileName")));
+				list.add(new Notice(rs.getInt("no"),
+						rs.getString("title"), rs.getString("content"), 
+						rs.getString("wdate"), rs.getString("startDate"), 
+						rs.getString("endDate"), rs.getString("fileName")));
 			}
 			return list;
 		}
