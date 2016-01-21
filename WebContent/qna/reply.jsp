@@ -16,7 +16,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>QnA - 답변하기</title>
+<link rel="stylesheet" type="text/css" href="../css/qna/reply.css">
 </head>
 <body>
 <form action="replyProcess.jsp" method="post">
@@ -27,17 +28,20 @@
 <input type="hidden" name="ordNo" value="${qna.ordNo}">
 <input type="hidden" name="levNo" value="${qna.levNo}">
 <input type="hidden" name="parentNo" value="${qna.no}">
-
+<div id="form_wrapper">
+<ul>
 <!-- 원문내용을 보여주고 나머지를 입력하는 데이터들 -->
-제목 : <input name="title" value="[답변] ${qna.title}"><br/>
-내용 : <textarea rows="5" cols="40" name="content">
+<li><label>제목</label><input name="title" value="[답변] ${qna.title}"></li>
+<li><label>내용</label><textarea rows="5" cols="40" name="content">
 
 
 --[원문내용]-----------------------
 ${qna.content}
-</textarea><br/>
-작성자 : <input name="writer"><br/>
+</textarea></li>
+<li><label>작성자</label><input name="writer"></li>
+</ul>
 <button>답변</button>
+</div>
 </form>
 </body>
 </html>
