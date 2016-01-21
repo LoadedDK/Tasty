@@ -42,7 +42,7 @@
 			<a href="../member/logoutProcess.jsp">
 			<span id="logout"><%=session.getAttribute("name") %></span>
 		<% } else { %>
-			<a href="../member/loginProcess.jsp">
+			<a href="../member/login.jsp">
 			<span id="login">로그인</span>
 		<% } %>
 		

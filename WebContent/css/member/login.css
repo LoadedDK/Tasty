@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+#content {
+	width: 300px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+#content ul {
+	list-style: none;
+	text-align: left;
+	padding: 0;
+}
+
+#content ul li {
+	line-height: 250%;
+}
+
+#content ul li label {
+	width: 120px;
+	float: left;
+}

@@ -7,11 +7,8 @@
 	request.setCharacterEncoding("UTF-8");
 	ServiceInterface service = new LoginService();
 	Login login = new Login();
-// 	login.setId(request.getParameter("id"));
-// 	login.setPw(request.getParameter("pw"));
-
-	login.setId("karlos");
-	login.setPw("4936");
+	login.setId(request.getParameter("id"));
+	login.setPw(request.getParameter("pw"));
 
 	login = (Login) service.service(login);
 	

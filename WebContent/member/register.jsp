@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/member/member.css">
+<link rel="stylesheet" type="text/css" href="../css/member/register.css">
 </head>
 <body>
 

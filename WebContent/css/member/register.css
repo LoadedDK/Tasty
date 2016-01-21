@@ -1,22 +1,5 @@
 @CHARSET "UTF-8";
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
-/* list */
-
-body a {
-	color: rgb(0,205,205);
-	text-decoration: none;
-}
-
-body a:visited {
-	color: rgb(0,205,205);
-	text-decoration: none;
-}
-
-
-
-/* register */
 
 #content {
 	width: 300px;

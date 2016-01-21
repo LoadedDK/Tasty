@@ -4,6 +4,10 @@
 <jsp:useBean id="member" class="com.tasty.member.model.Member" />
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:setProperty name="member" property="*" />
+
+<script type="text/javascript">
+	setTimeout("location.href='../index.jsp'",3000);
+</script>
 <%
 	ServiceInterface service = new MemberWriteService();
 	service.service(member);
