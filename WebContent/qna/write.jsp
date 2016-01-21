@@ -6,9 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>QnA - 질문하기</title>
 <link rel="stylesheet" type="text/css" href="../css/qna/write.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/qna/writeNull.js"></script>
 </head>
 <body>
-	<form action="writeProcess.jsp" method="post">
+	<form action="writeProcess.jsp" method="post" class="writeForm">
 		<h2>질문하기</h2>
 		<div id="form_wrapper">
 			<ul>

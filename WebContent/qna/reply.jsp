@@ -18,9 +18,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>QnA - 답변하기</title>
 <link rel="stylesheet" type="text/css" href="../css/qna/reply.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/qna/writeNull.js"></script>
 </head>
 <body>
-<form action="replyProcess.jsp" method="post">
+<form action="replyProcess.jsp" method="post" class="writeForm">
 <h2>답변하기</h2>
 <!-- 원문내용의 그 외 데이터들 : type="hidden" 으로 안보이게 처리 -->
 <input type="hidden" name="no" value="${qna.no}">
@@ -31,14 +33,14 @@
 <div id="form_wrapper">
 <ul>
 <!-- 원문내용을 보여주고 나머지를 입력하는 데이터들 -->
-<li><label>제목</label><input name="title" value="[답변] ${qna.title}"></li>
-<li><label>내용</label><textarea rows="5" cols="40" name="content">
+<li><label>제목</label><input id="title" name="title" value="[답변] ${qna.title}"></li>
+<li><label>내용</label><textarea rows="5" cols="40" id="content" name="content">
 
 
 =======[원문내용]=======
 ${qna.content}
 </textarea></li>
-<li><label>작성자</label><input name="writer"></li>
+<li><label>작성자</label><input id="writer" name="writer"></li>
 </ul>
 <button>답변</button>
 </div>
