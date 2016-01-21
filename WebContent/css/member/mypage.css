@@ -6,6 +6,13 @@
 	padding: 0 50px;
 }
 
+h2 {
+	margin-top: 0;
+	font-size: 40pt;
+	font-family: 'hanna';
+	color: #00cdcd;
+}
+
 #content ul {
 	list-style: none;
 	text-align: left;
@@ -19,6 +26,10 @@
 #content ul li label {
 	width: 120px;
 	float: left;
+}
+
+#tel2, #tel3 {
+	width: 43px;
 }
 
 #content a {

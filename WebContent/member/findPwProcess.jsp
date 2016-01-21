@@ -1,12 +1,16 @@
 <%@page import="com.tasty.member.service.FindPwService"%>
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	String[] req = {request.getParameter("id"), request.getParameter("email")};
 	ServiceInterface service = new FindPwService();
-	request.setAttribute("pw", service.service(req));
+	
+	String pw = (String) service.service(req);
+	
+	request.setAttribute("pw", pw);
 %>
 
 <!DOCTYPE html>
@@ -19,9 +23,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div id="content">
-	<span>귀하의 비밀번호는 ${pw } 입니다.</span><br><br>
-	<a id="loginBtn">로그인</a>
+
+	<c:choose>
+		<c:when test="${!empty id }">
+			<span>귀하의 비밀번호는 ${pw } 입니다.</span><br><br>
+			<a id="loginBtn">로그인</a>
+		</c:when>
+
+		<c:otherwise>
+			<span>해당하는 정보가 없습니다.</span><br><br>
+			<a href="javascript:history.back()">뒤로가기</a>
+		</c:otherwise>
+	</c:choose>
 </div>
+
 </body>
 </html>

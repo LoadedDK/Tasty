@@ -13,7 +13,8 @@ public class LoginService implements ServiceInterface {
 		MemberDao dao = new MemberDao();
 		
 		login = dao.login(login.getId(), login.getPw());
-		login.setPw(null);
+		if(login != null)
+			login.setPw(null);
 		
 		return login;
 	}

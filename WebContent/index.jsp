@@ -23,8 +23,10 @@
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
 <link rel="icon" type="image/x-icon" href="../favicon.png">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 <title>오늘의 맛집</title>
-<script src="../js/main.js"></script>
+
 </head>
 <body>
 
@@ -35,8 +37,17 @@
 		<a href="./notice/list.jsp">오늘의 맛집</a>
 		<a href="./board/list.jsp">맛집 이야기</a>
 		<a href="./qna/list.jsp">QnA</a>
-		<a href="./member/mypage.jsp">마이페이지</a>
-		<a href="./member/list.jsp">회원관리</a>
+		<c:if test="${!empty id }">
+			<c:choose>
+				<c:when test="${grade eq 1 }">
+					<a href="../member/mypage.jsp">마이페이지</a>
+				</c:when>
+				<c:when test="${grade eq 9 }">
+					<a href="../member/list.jsp">회원관리</a>
+				</c:when>
+			</c:choose>
+			
+		</c:if>
 	</div>
 	
 	<div id="login_div">
@@ -61,7 +72,7 @@
 
 <div id="content">
 	
-	<span id="logo">오늘의 맛집</span>
+	<label id="logo">오늘의 맛집</label>
 	
 	<div id="notice_list">
 		<div id="notice_list_inner">
@@ -75,7 +86,7 @@
 </div>
 
 <div id="footer">
-	
+	<label>전국의 맛집을 함께 찾아봐요!! 마이쪙!!</label>
 </div>
 
 </body>

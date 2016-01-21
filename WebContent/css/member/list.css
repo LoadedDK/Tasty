@@ -4,15 +4,14 @@
 	width: 800px;
 	margin: 0 auto;
 	background: white;
+	padding: 20px 0;
 }
 
 h2 {
 	margin-top: 0;
-	padding-top : 20px;
 	font-size: 40pt;
 	font-family: 'hanna';
 	color: #00cdcd;
-	
 }
 
 #memberTable {

@@ -1,11 +1,15 @@
 <%@page import="com.tasty.member.service.FindIdService"%>
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	ServiceInterface service = new FindIdService();
-	request.setAttribute("id", service.service(request.getParameter("email")));
+	
+	String id = (String) service.service(request.getParameter("email"));
+	
+	request.setAttribute("id", id);
 %>
 
 <!DOCTYPE html>
@@ -18,10 +22,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div id="content">
-	<span>귀하의 아이디는 ${id } 입니다.</span><br><br>
-	<a id="loginBtn">로그인</a>
-	<a id="findBtn">비밀번호 찾기</a>
+
+<c:choose>
+	<c:when test="${!empty id }">
+		<span>귀하의 아이디는 ${id } 입니다.</span><br><br>
+		<a id="loginBtn">로그인</a>
+		<a id="findBtn">비밀번호 찾기</a>
+	</c:when>
+
+	<c:otherwise>
+		<span>해당하는 정보가 없습니다.</span><br><br>
+		<a href="javascript:history.back()">뒤로가기</a>
+	</c:otherwise>
+</c:choose>
+
 </div>
+
 </body>
 </html>

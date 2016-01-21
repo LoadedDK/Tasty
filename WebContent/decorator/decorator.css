@@ -55,6 +55,44 @@ header {
 	#main_nav a:visited {
 		color: white;
 	}
+	
+	#login_div {
+		float: right;
+		padding: 20px;
+		margin-right: 140px;
+	}
+	
+	#login_div a {
+		text-decoration: none;
+	}
+	
+	#login_div a:visited {
+		text-decoration: none;
+	}
+		
+	#login {
+		text-align: right;
+		font-weight: bolder;
+		color: white;
+		margin-right: 50px;
+	}
+	
+	#logout {
+		text-align: right;
+		font-weight: bolder;
+		color: white;
+		margin-right: 50px;
+	}
+	
+	#login_img {
+		width: 34px;
+		height: 34px;
+		border-radius: 50%;
+		border: 3px solid #ffffff;
+		position: fixed;
+		top: 12px;
+		right: 160px;
+	}
 
 #content_wrapper {
 	text-align: center;

@@ -21,6 +21,8 @@
 	</ul>
 	<a id="loginBtn">로그인</a>
 	<a id="findBtn">아이디 / 비밀번호 찾기</a>
+	<br><br>
+	<a id="registerBtn">회원가입</a>
 </form>
 
 </div>
