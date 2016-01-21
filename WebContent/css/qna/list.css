@@ -83,14 +83,28 @@ h2{
 	margin-top: 10px;
 }
 
-#writebtn{
-	border: 1px solid;
-	width: 80px;
-	height: 25px;
+#btn_wrapper {
 	float: right;
+	width: 200px;
+	background: none;
+	text-align: right;
+}
+
+
+#btn_wrapper a{
+	color: white;
+}
+
+
+#writebtn {
+	text-decoration: none;
 	text-align: center;
-	background: rgb(0, 176, 179);
-	color: rgb(204, 254, 255);
-	margin-bottom: 10px;
-	cursor: pointer;
+	padding: 5px 15px;
+	color: white;
+	font-weight: bolder;
+	background: #959595;
+}
+
+#writebtn:HOVER {
+	background: rgb(0,205,205);
 }

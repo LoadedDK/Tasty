@@ -27,7 +27,9 @@
 <body>
 <div id="listWrapper">
 <h2>QnA</h2>
-<button onclick="location='write.jsp'" id="writebtn">질문하기</button>
+<div id="btn_wrapper">
+<a href="write.jsp" id="writebtn">질문하기</a>
+</div>
 <!-- jstl의 core를 사용하여 작성 
 taglib 디렉티브에서 jstl을 쓰겠다고 먼저 선언 -->
 <c:forEach var="qna" items="${list}">
