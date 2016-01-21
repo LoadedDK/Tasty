@@ -25,7 +25,7 @@ public class QnaListService implements ServiceInterface {
 		int endRow = 0;	// DB에서 가져올 글의 마지막 순서(rownum)번호
 		// endRow = startRow+rowsPerPage-1
 		
-		int pagesPerGroup = 3;	// 한 화면에 나타날 페이지의 갯수
+		int pagesPerGroup = 5;	// 한 화면에 나타날 페이지의 갯수
 		int startPage = 0;	// 화면에 처음 시작하는 페이지
 		// (page-1)/pagesPerGroup*pagesPerGroup+1
 		int endPage = 0;	// 화면에 나타나는 끝 페이지
