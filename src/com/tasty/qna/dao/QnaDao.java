@@ -102,7 +102,6 @@ public class QnaDao {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, no);
 			pstmt.executeUpdate();
-			System.out.println("조회수 증가 성공");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
