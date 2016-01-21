@@ -24,7 +24,7 @@
 	font-weight: bold;
 }
 #board_write_title{
-	font-size: 30pt;
+	font-size: 40pt;
 	font-weight: bolder;
 	color: 	rgb(0, 205, 205);
 	font-family: 'Hanna', sans-serif;
@@ -46,6 +46,21 @@
 	border: 1px solid #ccc;	
 }
 
-#board_write_btn{
+#form_wrapper button{
+	background: #959595;
+	border: none;
+	padding: 5px 15px;
+	color: white;
+	font-weight: bolder;
+	cursor: pointer;
+}
 
+#form_wrapper button:HOVER{
+	background: rgb(0, 205, 205);
+	
+}
+
+.bg{
+	background: #B4FFFF;
+	
 }

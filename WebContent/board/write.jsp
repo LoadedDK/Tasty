@@ -8,13 +8,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="../css/board/board_write.css">
+<link rel="stylesheet" type="text/css" href="../css/board/board_write.css">
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/qna/writeNull.js"></script>
+	<script type="text/javascript" src="../js/board/board_write_focus.js"></script>
 </head>
 <body>
-	<div id="board_write_title">자유 게시판 글쓰기</div>
+	<div id="board_write_title">맛집 이야기 글쓰기</div>
 	<br><br>
 	<form action="writeProcess.jsp" method="post" enctype="multipart/form-data" class="writeForm">
 		<div id="form_wrapper">
@@ -37,7 +37,7 @@
 				<input type="file" name="fileName" id="file" class="writeForm"></li>
 				
 			</ul>
-			<button id="board_write_btn">작성</button>
+			<button>작성</button>
 			<br>
 		</div>
 	</form>

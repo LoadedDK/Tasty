@@ -44,7 +44,7 @@
 					<li>
 						<div class="list_content">
 							<div id="list_title">
-								<a href="view.jsp?no=${board.no}&page=${jspData.page}">${board.title }</a>
+								<a href="view.jsp?no=${board.no}&page=${jspData.page}" id="list_a">${board.title }</a>
 							</div>
 							<br> <br>
 							<div id="list_content" class="textOver">${board.content}</div>
@@ -54,7 +54,7 @@
 
 						<div class="list_img">
 							<c:if test="${!empty board.fileName }">
-								<img src="../img/${board.fileName }" />
+								<img src="../img/board/${board.fileName }" />
 							</c:if>
 						</div>
 

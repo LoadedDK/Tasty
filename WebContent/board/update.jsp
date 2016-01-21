@@ -21,7 +21,7 @@
 
 </head>
 <body>
-<div id="board_write_title" >게시판 글수정</div>
+<div id="board_write_title" >맛집 이야기 글수정</div>
 <br><br>
 	<form action="updateProcess.jsp?page=${param.page }" method="post" enctype="multipart/form-data" class="writeForm">
 		<div id="form_wrapper">
