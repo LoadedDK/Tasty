@@ -9,8 +9,7 @@ h2{
 	width: 600px;
 	height: auto;
 	margin: auto;
-	padding-top: 10px;
-	padding-bottom: 20px;
+	padding: 20px;
 	background: white;
 }
 
@@ -20,18 +19,18 @@ h2{
 	margin-bottom: 10px;
 }
 
-#form_wrapper table tr{
-}
-
 #form_wrapper table th{
-	width: 100px;	
-	float: left;
-	color: rgb(0,205,205);
+	width: 100px;
+	height: auto;
+	padding : 5px;
+	color: rgb(204, 254, 255);
 	font-weight: bold;
+	background: rgb(0, 176, 179);
 }
 
 #form_wrapper table td{
-	width: 100%;
+	border-bottom: 1px solid rgb(0, 176, 179);
+	border-right: 1px solid rgb(0, 176, 179);
 	text-align: left;
 	padding: 5px;
 }
