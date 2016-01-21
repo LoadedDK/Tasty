@@ -4,6 +4,7 @@
 	font-size: 30pt;
 	font-weight: bolder;
 	color: 	rgb(0, 205, 205);
+	font-family: 'Hanna', sans-serif;
 	
 }
 
@@ -16,12 +17,12 @@
 #content ul li {
 	width: 100%;
 	height: 200px;
-/* 	border: 2px solid rgb(0, 205, 205); */
+	border-bottom: 2px solid white;
 	padding: 20px 0 20px 0;
 }
 
-.list_content {
-	float: left;
+#list_content {
+	text-align: left;	
 }
 
 .list_img {
@@ -50,11 +51,7 @@
 	background: #959595;
 }
 
- #pageMove a:VISITED {
-	color: black;
-	font-weight: bold;
-	text-decoration: none;
-}
+
 
 #write_btn:HOVER {
 	background: rgb(0,205,205);
@@ -63,6 +60,22 @@
 
 #pageMove a {
 	text-decoration: none;
+	color: #00cdcd;
+	padding: 6px 12px;
+	font-weight: bolder;
+}
+
+#pageMove a:VISITED {
+	color: #00cdcd;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+#cpage {
+	background: #00cdcd;
+	color: white;
+	padding: 6px 12px;
+	font-weight: bolder;
 }
 
 #list_title{
@@ -85,8 +98,9 @@
 
 }
 
-#list_startDate {
+#list_wdate {
 	text-align: right;
+	color: #959595;
 }
 
 .textOver {

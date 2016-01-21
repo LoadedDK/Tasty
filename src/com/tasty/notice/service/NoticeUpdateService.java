@@ -1,12 +1,8 @@
-/*
- * 글수정을 위한 클래스 
- */
 package com.tasty.notice.service;
 
 import com.tasty.notice.dao.NoticeDao;
 import com.tasty.notice.model.Notice;
 import com.tasty.controller.ServiceInterface;
-
 
 public class NoticeUpdateService implements ServiceInterface {
 

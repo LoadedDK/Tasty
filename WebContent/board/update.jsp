@@ -4,11 +4,11 @@
     pageEncoding="UTF-8"%>
     
 <%
-request.setCharacterEncoding("utf-8");
-String noStr = request.getParameter("no"); 
-if(noStr!=null){
-ServiceInterface service = new BoardViewService();
-request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
+	request.setCharacterEncoding("utf-8");
+	String noStr = request.getParameter("no"); 
+	if(noStr!=null){
+	ServiceInterface service = new BoardViewService();
+	request.setAttribute("board", service.service(Integer.parseInt(noStr)));}
 %>
 <!DOCTYPE html>
 <html>

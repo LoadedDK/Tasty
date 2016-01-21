@@ -53,12 +53,10 @@
 						<div id="list_title"><a href="view.jsp?no=${notice.no}&page=${jspData.page}"
 						>${notice.title }</a></div><br><br>
 						<div id="list_content" class="textOver">${notice.content}</div><br>
-						<div id="list_startDate">공지기간:${notice.wdate} ~ ${notice.endDate }</div><br>
+						<div id="list_startDate">공지기간  :  ${notice.wdate} ~ ${notice.endDate }</div><br>
 					</div>	
-					
-					
 					<div class="list_img">
-							<img src="../img/notice/${notice.fileName }">
+						<img src="../img/notice/${notice.fileName }">
 					</div>
 				</li>
 			</c:forEach>
@@ -66,21 +64,19 @@
 		</div>
 		<div id="pageMove">
 			<!-- 	페이지 처리 = 반복문 처리-->
-			[<a href="list.jsp?pri=${pri }&page=1">처음</a>] [<a
-				href="list.jsp?pri=${pri }&page=${jspData.startPage >1?jspData.startPage-jspData.pagesPerGroup:1 }">&lt;&lt;</a>]
-			[<a href="list.jsp?pri=${pri }&page=${jspData.page >1?jspData.page-1:1 }">&lt;</a>]
+			<a href="list.jsp?pri=${pri }&page=1">처음</a> 
+			<a href="list.jsp?pri=${pri }&page=${jspData.startPage >1?jspData.startPage-jspData.pagesPerGroup:1 }">&lt;&lt;</a>
+			<a href="list.jsp?pri=${pri }&page=${jspData.page >1?jspData.page-1:1 }">&lt;</a>
 
 			<c:forEach var="i" begin="${jspData.startPage }"
 				end="${jspData.endPage }">
 				<!-- 블랭크가 들어가면 String이기때문에 오류가 발생한다.  -->
-			[<a href="list.jsp?pri=${pri }&page=${i }">${i }</a>]
+			<a href="list.jsp?pri=${pri }&page=${i }">${i }</a>
 			</c:forEach>
 
-			[<a
-				href="list.jsp?pri=${pri}&page=${jspData.totalPage > jspData.endPage ? jspData.page + 1 : jspData.totalPage }">&gt;</a>]
-			[<a
-				href="list.jsp?pri=${pri}&page=${jspData.totalPage > jspData.endPage ? jspData.endPage + 1 : jspData.totalPage }">&gt;&gt;</a>]
-			[<a href="list.jsp?pri=${pri}&page=${jspData.totalPage }">끝</a>]
+			<a  href="list.jsp?pri=${pri}&page=${jspData.totalPage > jspData.endPage ? jspData.page + 1 : jspData.totalPage }">&gt;</a>
+			<a href="list.jsp?pri=${pri}&page=${jspData.totalPage > jspData.endPage ? jspData.endPage + 1 : jspData.totalPage }">&gt;&gt;</a>
+			<a href="list.jsp?pri=${pri}&page=${jspData.totalPage }">끝</a>
 		</div>
 		<br> <br>
 <!-- 		<div id="list_btn"> -->

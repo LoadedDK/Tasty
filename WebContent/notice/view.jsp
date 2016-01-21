@@ -1,7 +1,9 @@
+<%@page import="com.tasty.notice.model.Notice"%>
 <%@page import="com.tasty.controller.ServiceInterface"%>
 <%@page import="com.tasty.notice.service.NoticeViewService"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
 <%	
 	request.setCharacterEncoding("utf-8");
@@ -21,23 +23,38 @@
 		String no = request.getParameter("no");;
 		if(no!=null){
 		ServiceInterface service = new NoticeViewService();
-		request.setAttribute("notice", service.service(no));
+		Notice notice = (Notice)service.service(no);
+		
+		notice.setContent(notice.getContent().replace("\r\n", "<br>"));
+
+		request.setAttribute("notice", notice);
 	%>
 	<div id="articleMain">
 		<div id="articleTop">
 			<div id="articleTitle">${notice.title }</div>
 			<div id="articleContent">${notice.content}</div>
 			<div id="articleWdate">${notice.startDate} ~ ${notice.endDate}</div>
-			<div id="articleImage"><img src="../img/${notice.fileName }"></div>
+			<div id="articleImage">
+				<c:if test="${!empty notice.fileName }">
+
+					<img src="../img/notice/${notice.fileName}"/>
+				</c:if>		
+			</div>
 		</div>
 		<br>
 		<div>
-			<ul>
-				<li><a href="list.jsp">글리스트</a></li>
-				<li><a href="update.jsp?no=${notice.no }">글수정</a></li>
-				<li><a
-					href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a></li>
-			</ul>
+			<div id="btn_wrapper">
+				<a class="view_btn" href="list.jsp?page=${param.page}">글목록</a>
+				<a class="view_btn" href="update.jsp?no=${notice.no }&page=${param.page}">글수정</a>
+				<a class="view_btn" id="delete_btn" href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a>
+			</div>			
+			
+<!-- 			<ul> -->
+<!-- 				<li><a href="list.jsp">글리스트</a></li> -->
+<%-- 				<li><a href="update.jsp?no=${notice.no }">글수정</a></li> --%>
+<!-- 				<li><a -->
+<%-- 					href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a></li> --%>
+<!-- 			</ul> -->
 		</div>
 	</div>
 	<!-- 	<h2>공지사항 글보기</h2> -->

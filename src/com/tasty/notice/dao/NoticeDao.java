@@ -150,7 +150,7 @@ public class NoticeDao {
 			// 3. sql문장
 			String sql = "select no, title, content, to_char(wdate,'yyyy-mm-dd') wDate, "
 					+ " to_char(startdate,'yyyy-mm-dd') startDate, "
-					+ " to_char(enddate,'yyyy-mm-dd') endDate from notice where no = ? ";
+					+ " to_char(enddate,'yyyy-mm-dd') endDate, fileName from notice where no = ? ";
 			// 4. 상태 실행 및 데이터 입력
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, no);
@@ -165,6 +165,7 @@ public class NoticeDao {
 				notice.setWdate(rs.getString(4));
 				notice.setStartDate(rs.getString(5));
 				notice.setEndDate(rs.getString(6));
+				notice.setFileName(rs.getString(7));
 				return notice;
 			}
 		} catch (Exception e) {
@@ -226,15 +227,16 @@ public class NoticeDao {
 			// 2. 연결
 			con = DriverManager.getConnection(CommonDao.url, CommonDao.id, CommonDao.pw);
 			// 3. sql 작성
-			String sql = " update notice set  title = ?,content = ?,startDate = ?,endDate = ? where no = ? ";
+			String sql = " update notice set  title = ?,content = ?,startDate = ?,endDate = ?,fileName = ? where no = ? ";
 			// 4. 상태 실행및 데이터 입력
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, notice.getTitle());
 			pstmt.setString(2, notice.getContent());
 			pstmt.setString(3, notice.getStartDate());
 			pstmt.setString(4, notice.getEndDate());
+			pstmt.setString(5, notice.getFileName());
 			// 5. 실행
-			pstmt.setInt(5, notice.getNo());
+			pstmt.setInt(6, notice.getNo());
 			pstmt.executeUpdate();
 			// 6. 표시
 			System.out.println("글 수정 완료!!");
