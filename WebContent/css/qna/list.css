@@ -18,6 +18,10 @@
 	color: rgb(0, 100, 102);
 }
 
+#qnaListSection{
+	margin-top: 30px;
+}
+
 #Question{
 	clear: both;
 	background: rgb(0, 176, 179);
