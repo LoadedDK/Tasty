@@ -6,19 +6,56 @@
 	background: white;
 }
 
+h2 {
+	margin-top: 0;
+	padding-top : 20px;
+	font-size: 40pt;
+	font-family: 'hanna';
+	color: #00cdcd;
+	
+}
+
 #memberTable {
 	margin: 0 auto;
 	border: 1px solid #c8c8c8;
 	border-collapse: collapse;
+	border-spacing: inherit;
 }
 
+	#memberTable tr:hover {
+		background: #e0e0e0;
+	}
+
 	#memberTable th {
-		color: #00cdcd;
+		background: #00cdcd;
+		color: white;
+		font-weight: bolder;
 	}
 
 	#memberTable th,td {
 		padding: 6px 12px;
 		border: 1px solid #c8c8c8;
+		font-size: 11pt;
+	}
+	
+	#memberTable th:nth-child(1) {
+		width: 140px;
+	}
+	
+	#memberTable th:nth-child(2) {
+		width: 110px;
+	}
+	
+	#memberTable th:nth-child(3) {
+		width: 90px;
+	}
+	
+	#memberTable th:nth-child(4) {
+		width: 120px;
+	}
+	
+	#memberTable th:nth-child(5) {
+		width: 160px;
 	}
 
 #cpage {
@@ -26,6 +63,7 @@
 	color: white;
 	padding: 6px 12px;
 	font-weight: bolder;
+	margin-bottom: 50px;
 }
 
 #content a {

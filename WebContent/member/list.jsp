@@ -67,11 +67,7 @@
 	<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.page+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span></a>
 	<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span><span class="fa fa-chevron-right"></span></a>
 	<a href="list.jsp?page=${jspData.totalPage }"><span class="fa fa-step-forward"></span></a>
-
-	<br><br>
-
-	<button onclick="location='write.jsp'">회원가입</button>
-
+	
 </div>
 
 </body>
