@@ -1,9 +1,16 @@
 @CHARSET "UTF-8";
 
 #content {
-	width: 260px;
+	width: 280px;
 	margin: 0 auto;
 	padding: 0 50px;
+}
+
+h2 {
+	margin-top: 0;
+	font-size: 40pt;
+	font-family: 'hanna';
+	color: #00cdcd;
 }
 
 #content ul {
@@ -17,7 +24,7 @@
 }
 
 #content ul li label {
-	width: 80px;
+	width: 100px;
 	float: left;
 }
 

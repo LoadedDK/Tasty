@@ -8,7 +8,7 @@
 <script type="text/javascript">
 	setTimeout("location.href='../index.jsp'",3000);
 </script>
-
+<title>마이페이지</title>
 <%
 	ServiceInterface service = new MemberUpdateService();
 	service.service(member);

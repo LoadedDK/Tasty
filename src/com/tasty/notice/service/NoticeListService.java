@@ -20,10 +20,10 @@ public class NoticeListService implements ServiceInterface {
 		String period = pp.getPeriod();
 		int totalPage=0;
 		int totalRow=0;
-		int rowsPerPage=3;
+		int rowsPerPage=5;
 		int startRow=0;
 		int endRow=0;
-		int pagesPerGroup=3;
+		int pagesPerGroup=5;
 		int startPage=0;
 		int endPage=0;
 			

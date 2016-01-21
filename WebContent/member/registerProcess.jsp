@@ -6,8 +6,10 @@
 <jsp:setProperty name="member" property="*" />
 
 <script type="text/javascript">
-	setTimeout("location.href='../index.jsp'",3000);
+	setTimeout("location.href='./login.jsp'",3000);
 </script>
+
+<title>회원가입</title>
 <%
 	ServiceInterface service = new MemberWriteService();
 
@@ -19,4 +21,4 @@
 %>
 
 회원가입에 성공하였습니다.<br>
-3초후에 메인 페이지로 이동합니다.
+3초후에 로그인 페이지로 이동합니다.

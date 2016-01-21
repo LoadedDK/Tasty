@@ -1,4 +1,13 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.tasty.member.service.MemberIdListService"%>
+<%@page import="com.tasty.controller.ServiceInterface"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	ServiceInterface service = new MemberIdListService();
+	@SuppressWarnings("unchecked")
+	ArrayList<String> list = (ArrayList<String>) service.service(null);
+	String[] idList = list.toArray(new String[list.size()]);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +16,13 @@
 <link rel="stylesheet" type="text/css" href="../css/member/register.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="../js/member/register.js"></script>
+<script type="text/javascript">
+var id = new Array();
+<%
+	for(String id : idList)
+		out.println("id.push('" + id + "');");
+%>
+</script>
 </head>
 <body>
 

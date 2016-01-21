@@ -54,7 +54,7 @@
 	
 		<c:choose>
 			<c:when test="${!empty name }">
-				<a href="../member/logoutProcess.jsp">
+				<a id="logoutBtn">
 				<span id="logout">${name }</span>
 			</c:when>
 			<c:otherwise>

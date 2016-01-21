@@ -11,7 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/member/member.css">
-<title>Insert title here</title>
+<title>회원정보보기</title>
 </head>
 <body>
 <%

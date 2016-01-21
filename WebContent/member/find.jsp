@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="../css/member/find.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="../js/member/find.js"></script>
-<title>Insert title here</title>
+<title>아이디 / 비밀번호 찾기</title>
 </head>
 <body>
 <div id="content">
@@ -20,7 +20,7 @@
 		<a id="findIdBtn">아이디 찾기</a>
 	</form>
 	
-	<br><br>
+	<br><br><br><br>
 	
 	<h2>비밀번호 찾기</h2>
 	

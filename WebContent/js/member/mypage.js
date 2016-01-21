@@ -46,6 +46,17 @@ $(document).ready(function() {
 			return false;
 		}
 		
-//		$("form").submit();
+		$("form:first").submit();
+	});
+	
+	$("#deleteBtn").click(function() {
+		
+		if($("#oldPw1").val() != $("#oldPw2").val()) {
+			alert("현재 비밀번호가 일치하지 않습니다");
+			return false;
+		}
+		
+		if(confirm("탈퇴하시겠습니까?"))
+			$("form:last").submit();
 	});
 });

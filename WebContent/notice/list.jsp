@@ -35,20 +35,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/notice/notice_list.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
 	<section>
 		<div id="content">
 			<div id="list_head">오늘의 맛집</div>
+			<c:if test="${grade eq 9 }">
 			<div id="btn_wrapper">
 			<a id="write_btn" href="write.jsp">글쓰기</a>
 			</div><br>
-			<div id="notice_list_pbtn">
-			<button onclick="location='list.jsp?pri=cur'">현재공지</button>
-			<button onclick="location='list.jsp?pri=old'">지난공지</button>
-			<button onclick="location='list.jsp?pri=res'">미래공지</button>
-			<button onclick="location='list.jsp?pri=all'">모든공지</button>
-			</div>
+			
+				<div id="notice_list_pbtn">
+					<a onclick="location='list.jsp?pri=cur'">현재공지</a>
+					<a onclick="location='list.jsp?pri=old'">지난공지</a>
+					<a onclick="location='list.jsp?pri=res'">미래공지</a>
+					<a onclick="location='list.jsp?pri=all'">모든공지</a>
+				</div>
+			</c:if>
 			<ul>
 			<c:forEach var="notice" items="${list }">
 				<li>
@@ -70,20 +74,24 @@
 			</ul>
 		</div>
 		<div id="pageMove">
-			<!-- 	페이지 처리 = 반복문 처리-->
-			<a href="list.jsp?pri=${pri }&page=1">처음</a> 
-			<a href="list.jsp?pri=${pri }&page=${jspData.startPage >1?jspData.startPage-jspData.pagesPerGroup:1 }">&lt;&lt;</a>
-			<a href="list.jsp?pri=${pri }&page=${jspData.page >1?jspData.page-1:1 }">&lt;</a>
-
-			<c:forEach var="i" begin="${jspData.startPage }"
-				end="${jspData.endPage }">
-				<!-- 블랭크가 들어가면 String이기때문에 오류가 발생한다.  -->
-			<a href="list.jsp?pri=${pri }&page=${i }">${i }</a>
+			<a href="list.jsp?page=1"><span class="fa fa-step-backward"></span></a>
+			<a href="list.jsp?page=${jspData.startPage > 1 ? jspData.startPage-jspData.pagesPerGroup : 1 }"><span class="fa fa-chevron-left"></span><span class="fa fa-chevron-left"></span></a>
+			<a href="list.jsp?page=${jspData.page > 1 ? jspData.page-1 : 1 }"><span class="fa fa-chevron-left"></span></a>
+		
+			<c:forEach var="i" begin="${jspData.startPage }" end="${jspData.endPage }">
+				<c:choose>
+					<c:when test="${jspData.page eq i }">
+						<span id="cpage">${i }</span>
+					</c:when>
+					<c:otherwise>
+						<a href="list.jsp?page=${i }">${i }</a>
+					</c:otherwise>
+				</c:choose>
 			</c:forEach>
-
-			<a  href="list.jsp?pri=${pri}&page=${jspData.totalPage > jspData.endPage ? jspData.page + 1 : jspData.totalPage }">&gt;</a>
-			<a href="list.jsp?pri=${pri}&page=${jspData.totalPage > jspData.endPage ? jspData.endPage + 1 : jspData.totalPage }">&gt;&gt;</a>
-			<a href="list.jsp?pri=${pri}&page=${jspData.totalPage }">끝</a>
+		
+			<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.page+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span></a>
+			<a href="list.jsp?page=${jspData.totalPage > jspData.endPage ? jspData.endPage+1 : jspData.totalPage }"><span class="fa fa-chevron-right"></span><span class="fa fa-chevron-right"></span></a>
+			<a href="list.jsp?page=${jspData.totalPage }"><span class="fa fa-step-forward"></span></a>
 		</div>
 		<br> <br>
 

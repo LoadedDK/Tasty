@@ -9,6 +9,15 @@
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
 <link rel="icon" type="image/x-icon" href="../favicon.png">
 <link rel="stylesheet" type="text/css" href="../decorator/decorator.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#logoutBtn").click(function() {
+		if(confirm("로그아웃하시겠습니까?"))
+			window.location = "../member/logoutProcess.jsp";
+	});
+});
+</script>
 <title>오늘의 맛집 - <decorator:title /></title>
 <decorator:head />
 </head>
@@ -40,11 +49,11 @@
 	
 		<c:choose>
 			<c:when test="${!empty name }">
-				<a href="../member/logoutProcess.jsp">
+				<a id="logoutBtn">
 				<span id="logout">${name }</span>
 			</c:when>
 			<c:otherwise>
-				<a href="../member/login.jsp">
+				<a href="../member/login.jsp?url=<%= request.getRequestURI() %>">
 				<span id="login">로그인</span>
 			</c:otherwise>
 		</c:choose>

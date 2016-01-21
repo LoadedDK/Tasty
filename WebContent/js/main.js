@@ -1,7 +1,6 @@
 $(document).ready(function() {
-//	$.session.set("id", "ididididid");
-//	$.session.set("name", "namename");
-//	alert($.session.get('id'));
-//	alert($.session.get('name'));
-//	alert($.session.get('grade'));
+	$("#logoutBtn").click(function() {
+		if(confirm("로그아웃하시겠습니까?"))
+			window.location = "../member/logoutProcess.jsp";
+	});
 });

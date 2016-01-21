@@ -84,6 +84,10 @@ header {
 		margin-right: 50px;
 	}
 	
+	#logoutBtn {
+		cursor: pointer;
+	}
+	
 	#login_img {
 		width: 34px;
 		height: 34px;

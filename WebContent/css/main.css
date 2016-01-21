@@ -60,6 +60,7 @@ html, body {
 
 #login_div a {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 #login_div a:visited {

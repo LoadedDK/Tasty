@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<title>로그인</title>
 <%
 	request.setCharacterEncoding("UTF-8");
 	ServiceInterface service = new LoginService();
@@ -18,7 +19,12 @@
 		session.setAttribute("name", login.getName());
 		session.setAttribute("grade", login.getGrade());
 		
-		response.sendRedirect("../index.jsp");
+		String url = request.getParameter("url");
+		
+		if(url == null)
+			url = "index.jsp";
+		
+		response.sendRedirect("../" + url);
 	}
 	else {
 		%>

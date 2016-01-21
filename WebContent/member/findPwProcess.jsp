@@ -20,14 +20,15 @@
 <link rel="stylesheet" type="text/css" href="../css/member/find.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="../js/member/find.js"></script>
-<title>Insert title here</title>
+<title>비밀번호 찾기</title>
 </head>
 <body>
 
-<div id="content">
+<h2>비밀번호 찾기</h2>
 
+<div id="content">
 	<c:choose>
-		<c:when test="${!empty id }">
+		<c:when test="${!empty pw }">
 			<span>귀하의 비밀번호는 ${pw } 입니다.</span><br><br>
 			<a id="loginBtn">로그인</a>
 		</c:when>

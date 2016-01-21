@@ -55,6 +55,13 @@
 			
 			<a id="updateBtn">정보수정</a>
 		</form>
+		
+		<br><br>
+		
+		<form action="deleteProcess.jsp" method="post">
+			<input type="hidden" id="id" name="id" value="${member.id }">
+			<a id="deleteBtn">회원탈퇴</a>
+		</form>
 
 	</c:when>
 	<c:otherwise>
