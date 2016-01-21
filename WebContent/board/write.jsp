@@ -30,7 +30,7 @@
 				
 				<li>
 				<label for="writer">글쓴이</label>
-				<input name="writer" id="writer" class="writeForm" /></li>
+				<input name="writer" id="writer" class="writeForm" value="${name }" readonly="readonly"/></li>
 				
 				<li>
 				<label for="file">첨부파일</label>
