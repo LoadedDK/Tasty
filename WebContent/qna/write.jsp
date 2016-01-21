@@ -11,8 +11,8 @@
 </head>
 <body>
 	<form action="writeProcess.jsp" method="post" class="writeForm">
-		<h2>질문하기</h2>
 		<div id="form_wrapper">
+		<div id="list_head">질문하기</div>
 			<ul>
 				<li><label for="title">제목</label><input id="title" name="title"></li>
 				<li><label for="content">내용</label><textarea rows="5" cols="40" id="content" name="content"></textarea></li>

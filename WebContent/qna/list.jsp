@@ -26,7 +26,7 @@
 </head>
 <body>
 <div id="listWrapper">
-<h2>QnA</h2>
+<div id="list_head">QnA</div>
 <div id="btn_wrapper">
 <a href="write.jsp" id="writebtn">질문하기</a>
 </div>

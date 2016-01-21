@@ -18,8 +18,8 @@
 </head>
 <body>
 <form action="updateProcess.jsp?page=${param.page}" method="post" class="writeForm">
-<h2>수정하기</h2>
 <div id="form_wrapper">
+<div id="list_head">수정하기</div>
 <ul>
 <li><label>번호</label><input name="no" value="${qna.no}" readonly="readonly"></li>
 <li><label>제목</label><input id="title" name="title" value="${qna.title}"></li>

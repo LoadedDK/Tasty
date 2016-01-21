@@ -23,8 +23,8 @@ if(noStr != null) {
 <link rel="stylesheet" type="text/css" href="../css/qna/view.css">
 </head>
 <body>
-<h2>QnA 보기</h2>
 <div id="form_wrapper">
+<div id="list_head">QnA 보기</div>
 <table>
 <tr><th>번호</th><td>${board.no}</td></tr>
 <tr><th>제목</th><td>${board.title}</td></tr>

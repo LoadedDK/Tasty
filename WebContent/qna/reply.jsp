@@ -23,7 +23,6 @@
 </head>
 <body>
 <form action="replyProcess.jsp" method="post" class="writeForm">
-<h2>답변하기</h2>
 <!-- 원문내용의 그 외 데이터들 : type="hidden" 으로 안보이게 처리 -->
 <input type="hidden" name="no" value="${qna.no}">
 <input type="hidden" name="refNo" value="${qna.refNo}">
@@ -31,6 +30,7 @@
 <input type="hidden" name="levNo" value="${qna.levNo}">
 <input type="hidden" name="parentNo" value="${qna.no}">
 <div id="form_wrapper">
+<div id="list_head">답변하기</div>
 <ul>
 <!-- 원문내용을 보여주고 나머지를 입력하는 데이터들 -->
 <li><label>제목</label><input id="title" name="title" value="[답변] ${qna.title}"></li>

@@ -1,6 +1,9 @@
 @CHARSET "UTF-8";
 
-h2{
+#list_head{
+	font-size: 30pt;
+	font-weight: bolder;
+	color: 	rgb(0, 205, 205);
 	font-family: 'Hanna', sans-serif;
 }
 
