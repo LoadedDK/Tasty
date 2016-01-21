@@ -35,7 +35,7 @@
 <li><label>내용</label><textarea rows="5" cols="40" name="content">
 
 
---[원문내용]-----------------------
+=======[원문내용]=======
 ${qna.content}
 </textarea></li>
 <li><label>작성자</label><input name="writer"></li>
