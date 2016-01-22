@@ -24,7 +24,7 @@
 		if(url == null)
 			url = "index.jsp";
 		
-		response.sendRedirect("../" + url);
+		response.sendRedirect(url);
 	}
 	else {
 		%>
