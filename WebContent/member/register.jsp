@@ -10,6 +10,7 @@
 	ArrayList<String> list = (ArrayList<String>) service.service(null);
 	String[] idList = list.toArray(new String[list.size()]);
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,11 +20,13 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="../js/member/register.js"></script>
 <script type="text/javascript">
+
 var id = new Array();
 <%
 	for(String id : idList)
 		out.println("id.push('" + id + "');");
 %>
+
 </script>
 </head>
 <body>

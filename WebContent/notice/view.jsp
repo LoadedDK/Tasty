@@ -46,8 +46,10 @@
 		<div>
 			<div id="btn_wrapper">
 				<a class="view_btn" href="list.jsp?page=${param.page}">글목록</a>
+				<c:if test="${grade eq 9 }">
 				<a class="view_btn" href="update.jsp?no=${notice.no }&page=${param.page}">글수정</a>
 				<a class="view_btn" id="delete_btn" href="deleteProcess.jsp?no=${notice.no }&page=${param.page}">글삭제</a>
+				</c:if>
 			</div>			
 			
 <!-- 			<ul> -->

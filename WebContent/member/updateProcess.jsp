@@ -10,6 +10,13 @@
 </script>
 <title>마이페이지</title>
 <%
+	String tel1 = request.getParameter("tel1");
+	String tel2 = request.getParameter("tel2");
+	String tel3 = request.getParameter("tel3");
+	
+	String tel = tel1 + "-" + tel2 + "-" + tel3;
+	member.setTel(tel);
+	
 	ServiceInterface service = new MemberUpdateService();
 	service.service(member);
 %>
