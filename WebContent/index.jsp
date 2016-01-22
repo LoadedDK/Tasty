@@ -40,10 +40,10 @@
 		<c:if test="${!empty id }">
 			<c:choose>
 				<c:when test="${grade eq 1 }">
-					<a href="../member/mypage.jsp">마이페이지</a>
+					<a href="./member/mypage.jsp">마이페이지</a>
 				</c:when>
 				<c:when test="${grade eq 9 }">
-					<a href="../member/list.jsp">회원관리</a>
+					<a href="./member/list.jsp">회원관리</a>
 				</c:when>
 			</c:choose>
 			
@@ -63,7 +63,7 @@
 			</c:otherwise>
 		</c:choose>
 	
-		<img id="login_img" src="../img/login.png">
+		<img id="login_img" src="./img/login.png">
 		</a>
 	</div>
 </div>
@@ -78,7 +78,7 @@
 		<div id="notice_list_inner">
 			<table>
 			<c:forEach var="notice" items="${list }">
-				<tr><td><a href="../notice/view.jsp?no=${notice.no }">${i=i+1 }. ${notice.title }</a></td></tr>
+				<tr><td><a href="./notice/view.jsp?no=${notice.no }">${i=i+1 }. ${notice.title }</a></td></tr>
 			</c:forEach>
 			</table>
 		</div>
