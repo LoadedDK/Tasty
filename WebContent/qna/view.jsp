@@ -41,7 +41,7 @@ if(noStr != null) {
 }	// 글번호가 넘어온 경우에만 처리
 	else {	// 글번호가 넘어오지 않은 경우 처리
 %>
-	오류 : 글번호가 있어야 합니다.<br/>
+	오류 : 글번호가 있어야 합니다.<br><br>
 	<a onclick="history.back()" style="padding: 3px 10px; background: #00cdcd; color: white; font-weight: bolder; cursor: pointer; text-decoration: none;">이전 페이지로</a>
 <%
 	}
