@@ -58,7 +58,7 @@
 				<span id="logout">${name }</span>
 			</c:when>
 			<c:otherwise>
-				<a href="../member/login.jsp">
+				<a href="./member/login.jsp">
 				<span id="login">로그인</span>
 			</c:otherwise>
 		</c:choose>
