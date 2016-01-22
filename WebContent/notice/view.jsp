@@ -38,7 +38,7 @@
 			<div id="articleImage">
 				<c:if test="${!empty notice.fileName }">
 
-					<img src="../upload/${notice.fileName}"/>
+					<img src="upload/${notice.fileName}"/>
 				</c:if>		
 			</div>
 		</div>
