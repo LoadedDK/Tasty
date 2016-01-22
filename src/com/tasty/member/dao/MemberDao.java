@@ -480,6 +480,7 @@ public class MemberDao {
 			rs = pstmt.executeQuery();
 			// 데이터를 담기위한 객체 생성
 			ArrayList<String> list = new ArrayList<String>();
+
 			// 반복문을 통하여 여러개의 데이터를 저장
 			while(rs.next()) {
 				list.add(rs.getString("id"));
