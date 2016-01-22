@@ -66,7 +66,7 @@
 					
 					<div class="list_img">
 						<c:if test="${!empty notice.fileName }">
-							<a href="view.jsp?no=${notice.no }&page=${jspData.page }"><img src="upload/${notice.fileName }" /></a>
+							<a href="view.jsp?no=${notice.no }&page=${jspData.page }"><img src="Tasty/upload/${notice.fileName }" /></a>
 						</c:if>
 					</div>
 				</li>
