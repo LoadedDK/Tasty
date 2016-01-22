@@ -20,11 +20,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-<link rel="icon" type="image/x-icon" href="favicon.png">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.png">
+<link rel="icon" type="image/x-icon" href="./favicon.png">
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
 <title>오늘의 맛집</title>
 
 </head>
@@ -34,16 +34,16 @@
 
 <div id="header">
 	<div id="nav_main">
-		<a href="/notice/list.jsp">오늘의 맛집</a>
-		<a href="/board/list.jsp">맛집 이야기</a>
-		<a href="/qna/list.jsp">QnA</a>
+		<a href="./notice/list.jsp">오늘의 맛집</a>
+		<a href="./board/list.jsp">맛집 이야기</a>
+		<a href="./qna/list.jsp">QnA</a>
 		<c:if test="${!empty id }">
 			<c:choose>
 				<c:when test="${grade eq 1 }">
-					<a href="/member/mypage.jsp">마이페이지</a>
+					<a href="./member/mypage.jsp">마이페이지</a>
 				</c:when>
 				<c:when test="${grade eq 9 }">
-					<a href="/member/list.jsp">회원관리</a>
+					<a href="./member/list.jsp">회원관리</a>
 				</c:when>
 			</c:choose>
 			
@@ -58,12 +58,12 @@
 				<span id="logout">${name }</span>
 			</c:when>
 			<c:otherwise>
-				<a href="/member/login.jsp">
+				<a href="./member/login.jsp">
 				<span id="login">로그인</span>
 			</c:otherwise>
 		</c:choose>
 	
-		<img id="login_img" src="/img/login.png">
+		<img id="login_img" src="./img/login.png">
 		</a>
 	</div>
 </div>
@@ -78,7 +78,7 @@
 		<div id="notice_list_inner">
 			<table>
 			<c:forEach var="notice" items="${list }">
-				<tr><td><a href="/notice/view.jsp?no=${notice.no }">${i=i+1 }. ${notice.title }</a></td></tr>
+				<tr><td><a href="./notice/view.jsp?no=${notice.no }">${i=i+1 }. ${notice.title }</a></td></tr>
 			</c:forEach>
 			</table>
 		</div>
