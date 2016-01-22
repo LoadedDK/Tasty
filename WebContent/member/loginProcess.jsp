@@ -22,7 +22,7 @@
 		String url = request.getParameter("url");
 		
 		if(url == null)
-			url = "index.jsp";
+			url = "../index.jsp";
 		
 		response.sendRedirect(url);
 	}
